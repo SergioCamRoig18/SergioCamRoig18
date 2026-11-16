@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "date": "2026-11-16",
+    "percentages": {
+      "JavaScript": 41.5,
+      "TypeScript": 33.7,
+      "CSS": 24.5,
+      "HTML": 0.3
+    }
+  }
+]
