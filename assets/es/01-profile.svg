@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">SergioCamRoig18 — Perfil General</title>
-<desc id="desc">Grado en Ing. Informática · 4º Curso · 1 commits</desc>
+<desc id="desc">Grado en Ing. Informática · 4º Curso · 209 commits</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -86,31 +86,31 @@
 <g class="fade" style="animation-delay: 140ms">
       <rect x="338" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="349" y="104" class="lbl" fill="#9AA4B2">COMMITS (12M)</text>
-      <text x="349" y="132" class="stat-num">1</text>
+      <text x="349" y="132" class="stat-num">209</text>
       <polygon points="466,125 470,132 462,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 190ms">
       <rect x="488" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="499" y="104" class="lbl" fill="#9AA4B2">REPOSITORIOS</text>
-      <text x="499" y="132" class="stat-num">0</text>
+      <text x="499" y="132" class="stat-num">1</text>
       <polygon points="616,125 620,132 612,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 240ms">
       <rect x="638" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="649" y="104" class="lbl" fill="#9AA4B2">PULL REQUESTS</text>
-      <text x="649" y="132" class="stat-num">0</text>
+      <text x="649" y="132" class="stat-num">8</text>
       <polygon points="766,125 770,132 762,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 290ms">
       <rect x="338" y="153" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="349" y="171" class="lbl" fill="#9AA4B2">DÍAS ACTIVOS</text>
-      <text x="349" y="199" class="stat-num">1%</text>
+      <text x="349" y="199" class="stat-num">16%</text>
       <polygon points="466,192 470,199 462,199" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 340ms">
       <rect x="488" y="153" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="499" y="171" class="lbl" fill="#9AA4B2">MEJOR RACHA</text>
-      <text x="499" y="199" class="stat-num">3D</text>
+      <text x="499" y="199" class="stat-num">18D</text>
       <polygon points="616,192 620,199 612,199" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 390ms">
