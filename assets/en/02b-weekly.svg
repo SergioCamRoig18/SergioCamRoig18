@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="210" viewBox="0 0 400 210" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Weekly Rhythm</title>
+<desc id="desc">PEAK: MON</desc>
+<defs>
+  <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#15181D"/>
+    <stop offset="55%" stop-color="#1C2028"/>
+    <stop offset="100%" stop-color="#13161B"/>
+  </linearGradient>
+  <radialGradient id="aw-glow-left" cx="20%" cy="25%" r="55%">
+    <stop offset="0%" stop-color="rgba(82, 96, 114, 0.28)"/>
+    <stop offset="100%" stop-color="rgba(82, 96, 114, 0)"/>
+  </radialGradient>
+  <radialGradient id="aw-glow-amber" cx="82%" cy="72%" r="48%">
+    <stop offset="0%" stop-color="rgba(180, 142, 54, 0.13)"/>
+    <stop offset="100%" stop-color="rgba(180, 142, 54, 0)"/>
+  </radialGradient>
+  <linearGradient id="aw-active-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="rgba(245, 208, 66, 0.18)"/>
+    <stop offset="100%" stop-color="rgba(46, 52, 60, 0.80)"/>
+  </linearGradient>
+  <linearGradient id="aw-banner-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="rgba(28, 32, 38, 0.92)"/>
+    <stop offset="65%" stop-color="rgba(72, 85, 104, 0.34)"/>
+    <stop offset="100%" stop-color="rgba(217, 119, 36, 0.28)"/>
+  </linearGradient>
+  <pattern id="aw-crosshairs" width="56" height="56" patternUnits="userSpaceOnUse">
+    <path d="M28 24v8M24 28h8" stroke="rgba(255,255,255,0.13)" stroke-width="1"/>
+  </pattern>
+  <pattern id="coral-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="6" height="6" fill="rgba(224, 90, 71, 0.18)"/>
+    <line x1="0" y1="0" x2="0" y2="6" stroke="#E05A47" stroke-width="2"/>
+  </pattern>
+  
+</defs>
+<style>
+  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; fill: #EEF1F5; }
+  .sec-title { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; fill: #FFFFFF; }
+  .lbl { font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; }
+  .val { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
+  .stat-num { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; fill: #FFFFFF; }
+  .meta { font-size: 10.5px; font-weight: 600; letter-spacing: 0.05em; font-variant-numeric: tabular-nums; }
+  .fade { animation: awFade 0.42s ease-out both; }
+  .grow { transform-box: fill-box; transform-origin: left center; animation: awGrow 0.75s cubic-bezier(.2,.7,.2,1) 0.15s both; }
+  @keyframes awFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes awGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  
+</style>
+<rect width="400" height="210" fill="url(#aw-bg-grad)"/>
+<rect width="400" height="210" fill="url(#aw-glow-left)"/>
+<rect width="400" height="210" fill="url(#aw-glow-amber)"/>
+<rect width="400" height="210" fill="url(#aw-crosshairs)"/>
+<rect x="0.5" y="0.5" width="399" height="209" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+<line x1="18" y1="18" x2="382" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="18" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="26" y="33" class="sec-title">WEEKLY RHYTHM</text><text x="382" y="32" text-anchor="end" class="meta" fill="#F5D042">PEAK: MON</text>
+<rect x="18" y="42" width="364" height="151" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
+<g class="fade" style="animation-delay: 60ms">
+      <text x="28" y="63" font-size="11.5" font-weight="700" letter-spacing="0.05em" fill="#F5D042">MON</text>
+      <rect x="68" y="55" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="#F5D042" stroke-width="1"/>
+      <rect x="69" y="56" width="260" height="7" fill="#F5D042" class="grow"/>
+      <text x="370" y="63" text-anchor="end" font-size="11.5" font-weight="700" fill="#F5D042">1</text>
+    </g>
+<g class="fade" style="animation-delay: 105ms">
+      <text x="28" y="83" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">TUE</text>
+      <rect x="68" y="75" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      
+      <text x="370" y="83" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">0</text>
+    </g>
+<g class="fade" style="animation-delay: 150ms">
+      <text x="28" y="103" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">WED</text>
+      <rect x="68" y="95" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      <rect x="69" y="96" width="260" height="7" fill="#D8DEE6" class="grow"/>
+      <text x="370" y="103" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">1</text>
+    </g>
+<g class="fade" style="animation-delay: 195ms">
+      <text x="28" y="123" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">THU</text>
+      <rect x="68" y="115" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      
+      <text x="370" y="123" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">0</text>
+    </g>
+<g class="fade" style="animation-delay: 240ms">
+      <text x="28" y="143" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">FRI</text>
+      <rect x="68" y="135" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      <rect x="69" y="136" width="260" height="7" fill="#D8DEE6" class="grow"/>
+      <text x="370" y="143" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">1</text>
+    </g>
+<g class="fade" style="animation-delay: 285ms">
+      <text x="28" y="163" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">SAT</text>
+      <rect x="68" y="155" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      
+      <text x="370" y="163" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">0</text>
+    </g>
+<g class="fade" style="animation-delay: 330ms">
+      <text x="28" y="183" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">SUN</text>
+      <rect x="68" y="175" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      
+      <text x="370" y="183" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">0</text>
+    </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="147.5" height="28" viewBox="0 0 147.5 28" fill="none" role="img" aria-label="PORTFOLIO">
+<rect x="0.5" y="0.5" width="146.5" height="27" fill="rgba(245, 208, 66, 0.16)" stroke="#F5D042" stroke-width="1.5"/>
+<rect x="5" y="5" width="50" height="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+<text x="30" y="18" text-anchor="middle" font-family="'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">ENTER</text>
+<text x="64" y="18" font-family="'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.06em" fill="#F5D042">PORTFOLIO</text>
+</svg>

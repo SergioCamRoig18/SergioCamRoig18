@@ -1,0 +1,46 @@
+name: Update Profile HUD
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/update-hud.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-hud:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Generate HUD SVGs
+        env:
+          HUD_TOKEN: ${{ secrets.HUD_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run generate
+
+      - name: Commit and push updated HUD assets
+        run: |
+          if git diff --quiet assets history; then
+            echo "No HUD changes detected."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets history
+          git commit -m "chore(hud): update profile telemetry SVGs"
+          git push

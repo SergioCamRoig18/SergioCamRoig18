@@ -1,0 +1,16 @@
+{
+  "name": "sergiocamroig18-hud-readme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Call of Duty: Advanced Warfare inspired dynamic SVG HUD profile generator for SergioCamRoig18",
+  "scripts": {
+    "generate": "node src/cli.ts",
+    "generate:offline": "node src/cli.ts --offline",
+    "preview:demo": "node src/cli.ts --demo",
+    "test": "node --test tests/hud.test.ts"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
