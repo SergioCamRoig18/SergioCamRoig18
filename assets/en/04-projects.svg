@@ -34,7 +34,7 @@
   <clipPath id="proj-grid-clip"><rect x="205" y="17" width="576" height="208"/></clipPath>
 </defs>
 <style>
-  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; fill: #EEF1F5; }
+  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   .sec-title { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; fill: #FFFFFF; }
   .lbl { font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; }
   .val { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
@@ -52,6 +52,7 @@
 <rect width="800" height="256" fill="url(#aw-glow-amber)"/>
 <rect width="800" height="256" fill="url(#aw-crosshairs)"/>
 <rect x="0.5" y="0.5" width="799" height="255" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+<g fill="#EEF1F5">
 <line x1="20" y1="18" x2="194" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="20" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="28" y="33" class="sec-title">FEATURED PROJECTS</text>
 <g class="fade" style="animation-delay: 60ms">
     <rect x="20" y="42" width="84" height="44" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
@@ -65,7 +66,7 @@
 <g class="fade" style="animation-delay: 110ms">
     <rect x="20" y="94" width="174" height="50" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
     <text x="30" y="113" font-size="11.5" fill="#9AA4B2">Public Repos</text>
-    <text x="184" y="113" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="184" y="113" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">0</text>
     <text x="30" y="132" font-size="11.5" fill="#9AA4B2">Sync</text>
     <text x="184" y="132" text-anchor="end" font-size="11.5" font-weight="700" fill="#4ADE80">ACTIONS</text>
   </g>
@@ -137,10 +138,6 @@
     </g>
   
 <rect x="206" y="236" width="36" height="4" fill="#F5D042"/>
-<rect x="247" y="236" width="36" height="4" fill="rgba(255,255,255,0.20)"/>
-<rect x="288" y="236" width="36" height="4" fill="rgba(255,255,255,0.20)"/>
-<rect x="329" y="236" width="36" height="4" fill="rgba(255,255,255,0.20)"/>
-<rect x="370" y="236" width="36" height="4" fill="rgba(255,255,255,0.20)"/>
-<rect x="411" y="236" width="36" height="4" fill="rgba(255,255,255,0.20)"/>
-<text x="780" y="241" text-anchor="end" class="meta" fill="#F5D042">1/1</text>
+<text x="252" y="241" class="meta" fill="#F5D042">PAGE 1/1</text>
+</g>
 </svg>

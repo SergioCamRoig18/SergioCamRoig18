@@ -109,9 +109,43 @@ test('renderProjectsSvg emits CSS pagination animation when multiple pages exist
   const demo = buildDemoSnapshot(HUD_CONFIG);
   const projSvg = renderProjectsSvg(demo, 'en');
   assert.ok(projSvg.includes('@keyframes projScroll'), 'multi-page projects should animate');
-  assert.ok(projSvg.includes('1–2/2 AUTO'), 'pagination label should reflect 2 pages');
+  assert.ok(projSvg.includes('PAGE 1/2'), 'pagination label should show PAGE 1/2');
+  assert.ok(projSvg.includes('PAGE 2/2'), 'pagination label should show PAGE 2/2');
+  assert.ok(!projSvg.includes('pg-arrow-left'), '2 pages should not render overflow arrows');
+  assert.ok(!projSvg.includes('pg-arrow-right'), '2 pages should not render overflow arrows');
 
   const weeklySvg = renderWeeklySvg(demo, 'en');
   assert.ok(weeklySvg.includes(`fill="${COLORS.yellow}"`), 'peak day bar should be solid tactical yellow');
   assert.ok(weeklySvg.includes('PEAK: THU'), 'peak day header should show THU');
+});
+
+test('renderProjectsSvg shows animated side arrows only when > 6 pages exist, hiding at boundaries', () => {
+  const manyProjects = Array.from({ length: 39 }, (_, i) => ({
+    name: `project-${i + 1}`,
+    description: 'Sample repo',
+    stars: 0,
+    forks: 0,
+    commits: 5,
+    updatedAt: '2026-11-01T00:00:00Z',
+    tags: ['TypeScript'],
+    isPinned: false,
+    isPrivate: false,
+    isFork: false,
+    languages: [],
+  }));
+  const { activeCount, pages } = buildProjectPages(manyProjects, HUD_CONFIG);
+  assert.equal(pages.length, 7);
+
+  const demo = buildDemoSnapshot(HUD_CONFIG);
+  const sevenPageSnap = { ...demo, activeProjectCount: activeCount, projectPages: pages };
+  const svg = renderProjectsSvg(sevenPageSnap, 'en');
+
+  assert.ok(svg.includes('class="pg-arrow-left"'), '7 pages should render left overflow arrow');
+  assert.ok(svg.includes('class="pg-arrow-right"'), '7 pages should render right overflow arrow');
+  assert.ok(svg.includes('@keyframes pgArrowLeft'), 'left arrow should animate');
+  assert.ok(svg.includes('@keyframes pgArrowRight'), 'right arrow should animate');
+  assert.ok(svg.includes('0.00%, 12.88% { opacity: 0; }'), 'left arrow hidden on first page');
+  assert.ok(svg.includes('85.71%, 98.59% { opacity: 0; }'), 'right arrow hidden on last page');
+  assert.ok(svg.includes('PAGE 7/7'), '7th page label should exist');
+  assert.ok(!svg.includes('pg-seg-6'), 'only up to 6 visible segment bars should be rendered');
 });

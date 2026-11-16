@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">SergioCamRoig18 — Perfil General</title>
-<desc id="desc">Grado en Ing. Informática · 4º Curso · 204 commits</desc>
+<desc id="desc">Grado en Ing. Informática · 4º Curso · 1 commits</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -34,7 +34,7 @@
   
 </defs>
 <style>
-  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; fill: #EEF1F5; }
+  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   .sec-title { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; fill: #FFFFFF; }
   .lbl { font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; }
   .val { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
@@ -52,11 +52,12 @@
 <rect width="800" height="230" fill="url(#aw-glow-amber)"/>
 <rect width="800" height="230" fill="url(#aw-crosshairs)"/>
 <rect x="0.5" y="0.5" width="799" height="229" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+<g fill="#EEF1F5">
 <line x1="20" y1="18" x2="322" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="20" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="28" y="33" class="sec-title">PERFIL GENERAL</text>
 <g class="fade" style="animation-delay: 60ms">
-      <rect x="20" y="42" width="302" height="38" fill="url(#aw-active-grad)" stroke="#F5D042" stroke-width="1.5"/>
+      <rect x="20" y="42" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="30" y="56" class="lbl" fill="#9AA4B2">FORMACIÓN</text>
-      <text x="30" y="72" class="val" fill="#F5D042">Grado en Ing. Informática · 4º Curso</text>
+      <text x="30" y="72" class="val" fill="#EEF1F5">Grado en Ing. Informática · 4º Curso</text>
     </g>
 <g class="fade" style="animation-delay: 120ms">
       <rect x="20" y="85" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
@@ -85,31 +86,31 @@
 <g class="fade" style="animation-delay: 140ms">
       <rect x="338" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="349" y="104" class="lbl" fill="#9AA4B2">COMMITS (12M)</text>
-      <text x="349" y="132" class="stat-num">204</text>
+      <text x="349" y="132" class="stat-num">1</text>
       <polygon points="466,125 470,132 462,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 190ms">
       <rect x="488" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="499" y="104" class="lbl" fill="#9AA4B2">REPOSITORIOS</text>
-      <text x="499" y="132" class="stat-num">2</text>
+      <text x="499" y="132" class="stat-num">0</text>
       <polygon points="616,125 620,132 612,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 240ms">
       <rect x="638" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="649" y="104" class="lbl" fill="#9AA4B2">PULL REQUESTS</text>
-      <text x="649" y="132" class="stat-num">8</text>
+      <text x="649" y="132" class="stat-num">0</text>
       <polygon points="766,125 770,132 762,132" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 290ms">
       <rect x="338" y="153" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="349" y="171" class="lbl" fill="#9AA4B2">DÍAS ACTIVOS</text>
-      <text x="349" y="199" class="stat-num">16%</text>
+      <text x="349" y="199" class="stat-num">1%</text>
       <polygon points="466,192 470,199 462,199" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 340ms">
       <rect x="488" y="153" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="499" y="171" class="lbl" fill="#9AA4B2">MEJOR RACHA</text>
-      <text x="499" y="199" class="stat-num">18D</text>
+      <text x="499" y="199" class="stat-num">3D</text>
       <polygon points="616,192 620,199 612,199" fill="#4ADE80"/>
     </g>
 <g class="fade" style="animation-delay: 390ms">
@@ -118,4 +119,5 @@
       <text x="649" y="199" class="stat-num">0</text>
       <polygon points="766,192 770,199 762,199" fill="#4ADE80"/>
     </g>
+</g>
 </svg>

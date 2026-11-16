@@ -1,3 +1,5 @@
+<a id="hud-top"></a>
+
 <div align="center">
 
 <p align="center">
@@ -6,20 +8,20 @@
 </p>
 
 <p align="center">
-  <img src="assets/es/01-profile.svg" width="800" alt="SergioCamRoig18 — Perfil General" />
+  <a href="#hud-top"><img src="assets/es/01-profile.svg" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/es/02a-languages.svg" width="396" alt="Lenguajes Más Usados (Variación 30D)" />
-  <img src="assets/es/02b-weekly.svg" width="396" alt="Ritmo Semanal" />
+  <a href="#hud-top"><img src="assets/es/02a-languages.svg" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
+  <a href="#hud-top"><img src="assets/es/02b-weekly.svg" width="396" alt="Ritmo Semanal" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/es/03-stack.svg" width="800" alt="Stack Tecnológico" />
+  <a href="#hud-top"><img src="assets/es/03-stack.svg" width="800" alt="Stack Tecnológico" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/es/04-projects.svg" width="800" alt="Proyectos Destacados" />
+  <a href="#hud-top"><img src="assets/es/04-projects.svg" width="800" alt="Proyectos Destacados" /></a>
 </p>
 
 <p align="center">

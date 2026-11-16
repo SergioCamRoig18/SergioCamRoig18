@@ -1,3 +1,5 @@
+<a id="hud-top"></a>
+
 <div align="center">
 
 <p align="center">
@@ -6,20 +8,20 @@
 </p>
 
 <p align="center">
-  <img src="assets/en/01-profile.svg" width="800" alt="SergioCamRoig18 — Profile Overview" />
+  <a href="#hud-top"><img src="assets/en/01-profile.svg" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/en/02a-languages.svg" width="396" alt="Most Used Languages (30D Delta)" />
-  <img src="assets/en/02b-weekly.svg" width="396" alt="Weekly Activity Rhythm" />
+  <a href="#hud-top"><img src="assets/en/02a-languages.svg" width="396" alt="Most Used Languages (30D Delta)" /></a>
+  <a href="#hud-top"><img src="assets/en/02b-weekly.svg" width="396" alt="Weekly Activity Rhythm" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/en/03-stack.svg" width="800" alt="Tech Stack & Tools" />
+  <a href="#hud-top"><img src="assets/en/03-stack.svg" width="800" alt="Tech Stack & Tools" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/en/04-projects.svg" width="800" alt="Featured Projects" />
+  <a href="#hud-top"><img src="assets/en/04-projects.svg" width="800" alt="Featured Projects" /></a>
 </p>
 
 <p align="center">

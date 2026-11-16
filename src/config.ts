@@ -21,7 +21,6 @@ export const HUD_CONFIG: HudConfig = {
         en: 'B.Sc. Computer Engineering · 4th Year',
         es: 'Grado en Ing. Informática · 4º Curso',
       },
-      active: true,
     },
     {
       label: { en: 'Specialization', es: 'Especialización' },
@@ -49,7 +48,6 @@ export const HUD_CONFIG: HudConfig = {
     {
       label: { en: 'Backend & Core', es: 'Backend y Core' },
       items: 'Java · C# (.NET) · Node.js',
-      active: true,
     },
     {
       label: { en: 'Frontend & UI', es: 'Frontend e Interfaz' },

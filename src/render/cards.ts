@@ -38,6 +38,7 @@ const I18N = {
     commitsWord: 'Commits',
     updatedWord: 'Updated',
     slotReserved: (n: number) => `Slot ${String(n).padStart(2, '0')} // Reserved`,
+    pageWord: 'PAGE',
     statusLbl: 'Status',
     lockedLbl: 'Locked',
     awaitingLbl: 'Awaiting deployment...',
@@ -70,6 +71,7 @@ const I18N = {
     commitsWord: 'Commits',
     updatedWord: 'Act.',
     slotReserved: (n: number) => `Hueco ${String(n).padStart(2, '0')} // Reservado`,
+    pageWord: 'PÁG.',
     statusLbl: 'Estado',
     lockedLbl: 'Bloqueado',
     awaitingLbl: 'Esperando despliegue...',
@@ -466,13 +468,19 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
           const row = Math.floor(cIdx / 3);
           const x = gridX + col * (cardW + colGap);
           const y = gridY + offsetY + row * (cardH + rowGap);
-          const highlight = pIdx === 0 && cIdx === 0 && !card.isLocked;
-          return renderProjectCard(card, x, y, cardW, cardH, highlight, lang);
+          return renderProjectCard(card, x, y, cardW, cardH, false, lang);
         })
         .join('');
       return `<g class="proj-page">${cards}</g>`;
     })
     .join('');
+
+  const visibleSegments = Math.min(6, pageCount);
+  const hasOverflowPages = pageCount > 6;
+  const barW = 36;
+  const barGap = 5;
+  const segStartX = hasOverflowPages ? gridX + 14 : gridX;
+  const segmentsWidth = visibleSegments * barW + Math.max(0, visibleSegments - 1) * barGap;
 
   if (pageCount > 1) {
     const hold = 5.5;
@@ -488,17 +496,45 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
 
     extraCss += `\n  .proj-track { animation: projScroll ${totalSec}s ease-in-out infinite; }\n  @keyframes projScroll { ${trackFrames} }`;
 
-    // Sync pagination indicators at bottom
-    pages.forEach((_, i) => {
+    const activeSegForPage = (j: number) => {
+      if (pageCount <= 6) return j;
+      const winStart = Math.min(Math.max(0, j - 2), pageCount - 6);
+      return j - winStart;
+    };
+
+    // Sync visible pagination segments at bottom
+    for (let i = 0; i < visibleSegments; i++) {
       const segFrames = pages
-        .map((__, j) => {
-          const fill = i === j ? COLORS.yellow : 'rgba(255,255,255,0.22)';
+        .map((_, j) => {
+          const fill = activeSegForPage(j) === i ? COLORS.yellow : 'rgba(255,255,255,0.22)';
           return `${pct(j * step)}, ${pct(j * step + hold)} { fill: ${fill}; }`;
         })
         .concat(`100% { fill: ${i === 0 ? COLORS.yellow : 'rgba(255,255,255,0.22)'}; }`)
         .join(' ');
       extraCss += `\n  .pg-seg-${i} { animation: pgSeg${i} ${totalSec}s linear infinite; }\n  @keyframes pgSeg${i} { ${segFrames} }`;
+    }
+
+    // Sync dynamic page number text ("PAGE 1/N", "PAGE 2/N", ...)
+    pages.forEach((_, j) => {
+      const lblFrames = pages
+        .map((__, k) => `${pct(k * step)}, ${pct(k * step + hold)} { opacity: ${j === k ? 1 : 0}; }`)
+        .concat(`100% { opacity: ${j === 0 ? 1 : 0}; }`)
+        .join(' ');
+      extraCss += `\n  .pg-lbl-${j} { opacity: ${j === 0 ? 1 : 0}; animation: pgLbl${j} ${totalSec}s linear infinite; }\n  @keyframes pgLbl${j} { ${lblFrames} }`;
     });
+
+    if (hasOverflowPages) {
+      const leftFrames = pages
+        .map((_, j) => `${pct(j * step)}, ${pct(j * step + hold)} { opacity: ${j === 0 ? 0 : 1}; }`)
+        .concat('100% { opacity: 0; }')
+        .join(' ');
+      const rightFrames = pages
+        .map((_, j) => `${pct(j * step)}, ${pct(j * step + hold)} { opacity: ${j === pageCount - 1 ? 0 : 1}; }`)
+        .concat('100% { opacity: 1; }')
+        .join(' ');
+      extraCss += `\n  .pg-arrow-left { opacity: 0; animation: pgArrowLeft ${totalSec}s linear infinite; }\n  @keyframes pgArrowLeft { ${leftFrames} }`;
+      extraCss += `\n  .pg-arrow-right { opacity: 1; animation: pgArrowRight ${totalSec}s linear infinite; }\n  @keyframes pgArrowRight { ${rightFrames} }`;
+    }
   }
 
   parts.push(`
@@ -507,22 +543,44 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
     </g>
   `);
 
-  // Bottom pagination indicator bar (shows 1..max(6, pageCount) bars like Capture 7)
-  const totalBars = Math.max(6, pageCount);
-  const barW = 36;
-  const barGap = 5;
-  for (let i = 0; i < totalBars; i++) {
-    const bx = gridX + i * (barW + barGap);
+  // Left arrow only when > 6 pages
+  if (hasOverflowPages) {
+    parts.push(
+      `<polygon points="${gridX + 7},234 ${gridX + 7},242 ${gridX},238" fill="${COLORS.yellow}" class="pg-arrow-left"/>`,
+    );
+  }
+
+  // Visible page segments (1..min(6, pageCount))
+  for (let i = 0; i < visibleSegments; i++) {
+    const bx = segStartX + i * (barW + barGap);
     const isInitialActive = i === 0;
-    const cls = i < pageCount && pageCount > 1 ? ` class="pg-seg-${i}"` : '';
+    const cls = pageCount > 1 ? ` class="pg-seg-${i}"` : '';
     parts.push(
       `<rect x="${bx}" y="236" width="${barW}" height="4" fill="${isInitialActive ? COLORS.yellow : 'rgba(255,255,255,0.20)'}"${cls}/>`,
     );
   }
-  const pageText = pageCount > 1 ? `1–${pageCount}/${pageCount} AUTO` : '1/1';
-  parts.push(
-    `<text x="780" y="241" text-anchor="end" class="meta" fill="${COLORS.yellow}">${pageText}</text>`,
-  );
+
+  // Right arrow only when > 6 pages
+  if (hasOverflowPages) {
+    const arrowRightX = segStartX + segmentsWidth + 7;
+    parts.push(
+      `<polygon points="${arrowRightX},234 ${arrowRightX},242 ${arrowRightX + 7},238" fill="${COLORS.yellow}" class="pg-arrow-right"/>`,
+    );
+  }
+
+  // Page counter placed right beside the pagination bars (and right arrow if present)
+  const labelX = hasOverflowPages ? segStartX + segmentsWidth + 21 : segStartX + segmentsWidth + 10;
+  if (pageCount === 1) {
+    parts.push(
+      `<text x="${labelX}" y="241" class="meta" fill="${COLORS.yellow}">${esc(t.pageWord)} 1/1</text>`,
+    );
+  } else {
+    for (let j = 0; j < pageCount; j++) {
+      parts.push(
+        `<text x="${labelX}" y="241" class="meta pg-lbl-${j}" fill="${COLORS.yellow}">${esc(t.pageWord)} ${j + 1}/${pageCount}</text>`,
+      );
+    }
+  }
 
   return svgShell({
     width: 800,

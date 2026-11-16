@@ -321,6 +321,7 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
   const user = payload.data?.user;
   if (!user) throw new Error(`User ${config.username} not found via GraphQL`);
 
+  const ignoredSet = new Set(config.ignoredRepos.map((r) => r.toLowerCase()));
   const pinnedSet = new Set<string>(
     (user.pinnedItems?.nodes ?? []).map((n: { name?: string }) => (n?.name ?? '').toLowerCase()),
   );
@@ -343,6 +344,8 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
 
   for (const repo of user.repositories?.nodes ?? []) {
     if (!repo || repo.isFork) continue;
+    const isPinned = pinnedSet.has(repo.name.toLowerCase());
+    if (ignoredSet.has(repo.name.toLowerCase()) && !isPinned) continue;
     totalStars += repo.stargazerCount ?? 0;
 
     const repoLangs = (repo.languages?.edges ?? []).map((e: any) => ({
@@ -365,7 +368,7 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
       commits: repo.defaultBranchRef?.target?.history?.totalCount ?? 0,
       updatedAt: repo.pushedAt ?? '',
       tags: mergeTags({ languages: repoLangs, topics }),
-      isPinned: pinnedSet.has(repo.name.toLowerCase()),
+      isPinned,
       isPrivate: Boolean(repo.isPrivate),
       isFork: Boolean(repo.isFork),
       languages: repoLangs,
@@ -454,12 +457,14 @@ async function fetchPublicRest(config: HudConfig, historyPath: string): Promise<
     events = [];
   }
 
+  const ignoredSet = new Set(config.ignoredRepos.map((r) => r.toLowerCase()));
   const rawLangs = new Map<string, { bytes: number; color: string | null }>();
   const rawProjects: RawProject[] = [];
   let totalStars = 0;
 
   for (const r of repos) {
     if (r.fork) continue;
+    if (ignoredSet.has(String(r.name ?? '').toLowerCase())) continue;
     totalStars += r.stargazers_count ?? 0;
 
     let langMap: Record<string, number> = {};
@@ -553,7 +558,7 @@ async function fetchPublicRest(config: HudConfig, historyPath: string): Promise<
     },
     languages,
     weekly,
-    publicRepoCount: user.public_repos ?? rawProjects.length,
+    publicRepoCount: rawProjects.filter((p) => !p.isPrivate).length,
     activeProjectCount: activeCount,
     projectPages: pages,
   };

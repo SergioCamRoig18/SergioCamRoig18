@@ -34,7 +34,7 @@
   
 </defs>
 <style>
-  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; fill: #EEF1F5; }
+  text { font-family: 'Bahnschrift SemiCondensed', 'Segoe UI', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   .sec-title { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; fill: #FFFFFF; }
   .lbl { font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; }
   .val { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
@@ -52,10 +52,11 @@
 <rect width="800" height="112" fill="url(#aw-glow-amber)"/>
 <rect width="800" height="112" fill="url(#aw-crosshairs)"/>
 <rect x="0.5" y="0.5" width="799" height="111" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+<g fill="#EEF1F5">
 <line x1="20" y1="16" x2="780" y2="16" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="20" y="25" width="3.5" height="3.5" fill="#FFFFFF"/><text x="28" y="31" class="sec-title">TECH STACK &amp; TOOLS</text><text x="780" y="30" text-anchor="end" class="meta" fill="#9AA4B2">SOFTWARE ENGINEERING</text>
 <g class="fade" style="animation-delay: 60ms">
-      <rect x="20" y="38" width="184" height="58" fill="url(#aw-active-grad)" stroke="#F5D042" stroke-width="1.5"/>
-      <text x="30" y="53" class="lbl" fill="#F5D042">BACKEND &amp; CORE</text>
+      <rect x="20" y="38" width="184" height="58" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
+      <text x="30" y="53" class="lbl" fill="#9AA4B2">BACKEND &amp; CORE</text>
       <text x="30" y="71" font-size="12" font-weight="600" fill="#FFFFFF">Java · C# (.NET) ·</text>
            <text x="30" y="86" font-size="12" font-weight="600" fill="#FFFFFF">Node.js</text>
     </g>
@@ -76,4 +77,5 @@
       <text x="606" y="53" class="lbl" fill="#9AA4B2">DEVOPS &amp; QA</text>
       <text x="606" y="76" font-size="12.5" font-weight="600" fill="#FFFFFF">Git · GitHub · Docker</text>
     </g>
+</g>
 </svg>

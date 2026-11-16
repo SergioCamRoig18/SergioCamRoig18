@@ -136,7 +136,7 @@ export function svgShell(opts: SvgShellOptions): string {
   ${extraDefs}
 </defs>
 <style>
-  text { font-family: ${HUD_FONT}; fill: ${COLORS.text}; }
+  text { font-family: ${HUD_FONT}; }
   .sec-title { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; fill: #FFFFFF; }
   .lbl { font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; }
   .val { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
@@ -154,7 +154,9 @@ export function svgShell(opts: SvgShellOptions): string {
 <rect width="${width}" height="${height}" fill="url(#aw-glow-amber)"/>
 <rect width="${width}" height="${height}" fill="url(#aw-crosshairs)"/>
 <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+<g fill="${COLORS.text}">
 ${body}
+</g>
 </svg>
 `;
 }
