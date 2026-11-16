@@ -633,7 +633,7 @@ export function renderActionButtonSvg(visual: ButtonVisual, label: string, activ
     boxW = 20;
     visualElement = `
 <rect x="5" y="4" width="20" height="20" rx="2" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-<g transform="translate(7, 6)">${visual.iconSvg}</g>
+${visual.iconSvg}
 `;
   } else if (visual.keycap) {
     boxW = Math.max(22, visual.keycap.length * 8 + 10);
@@ -672,9 +672,11 @@ function loadIconVisual(
           .replace(/<svg[^>]*>/i, '')
           .replace(/<\/svg>/i, '')
           .trim();
-        return {
-          iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="${vb}">${inner}</svg>`,
-        };
+        if (inner.length > 5) {
+          return {
+            iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="${vb}">${inner}</svg>`,
+          };
+        }
       } catch {
         // fallback
       }
