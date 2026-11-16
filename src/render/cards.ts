@@ -30,13 +30,13 @@ const I18N = {
     stackSec: 'Tech Stack & Tools',
     stackSub: 'SOFTWARE ENGINEERING',
     projSec: 'Featured Projects',
-    activeLbl: 'ACTIVE',
-    slotsLbl: 'OPEN SLOTS',
+    activeLbl: 'PROJECTS',
+    forksLbl: 'FORKS',
     publicRepos: 'Public Repos',
     syncLbl: 'Sync',
-    notice1: 'Reserved slots unlock',
-    notice2: 'automatically as new',
-    notice3: 'repos are deployed.',
+    notice1: 'TELEMETRY FEED ACTIVE',
+    notice2: 'Repositories synced',
+    notice3: 'via GitHub Actions.',
     commitsWord: 'Commits',
     updatedWord: 'Updated',
     slotReserved: (n: number) => `Slot ${String(n).padStart(2, '0')} // Reserved`,
@@ -63,13 +63,13 @@ const I18N = {
     stackSec: 'Stack Tecnológico',
     stackSub: 'INGENIERÍA DEL SOFTWARE',
     projSec: 'Proyectos',
-    activeLbl: 'ACTIVOS',
-    slotsLbl: 'HUECOS',
+    activeLbl: 'PROYECTOS',
+    forksLbl: 'FORKS',
     publicRepos: 'Repos Públicos',
     syncLbl: 'Sincr.',
-    notice1: 'Los huecos reservados',
-    notice2: 'se desbloquean solos',
-    notice3: 'al subir proyectos.',
+    notice1: 'TELEMETRÍA ACTIVA',
+    notice2: 'Repositorios sincronizados',
+    notice3: 'vía GitHub Actions.',
     commitsWord: 'Commits',
     updatedWord: 'Act.',
     slotReserved: (n: number) => `Hueco ${String(n).padStart(2, '0')} // Reservado`,
@@ -401,8 +401,7 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
   const t = I18N[lang];
   const pages = snapshot.projectPages;
   const pageCount = pages.length;
-  const totalSlotsOnView = pageCount * 6;
-  const openSlots = Math.max(0, totalSlotsOnView - snapshot.activeProjectCount);
+  const totalForks = snapshot.projectPages.flat().reduce((sum, p) => sum + (p.forks || 0), 0);
 
   const parts: string[] = [];
 
@@ -417,8 +416,8 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
     <text x="62" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">${snapshot.activeProjectCount}</text>
 
     <rect x="110" y="42" width="84" height="44" fill="${COLORS.boxFill}" stroke="${COLORS.boxBorder}" stroke-width="1"/>
-    <text x="152" y="57" text-anchor="middle" class="lbl" fill="${COLORS.muted}">${t.slotsLbl}</text>
-    <text x="152" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="${COLORS.yellow}">${openSlots}</text>
+    <text x="152" y="57" text-anchor="middle" class="lbl" fill="${COLORS.muted}">${t.forksLbl}</text>
+    <text x="152" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="${COLORS.yellow}">${totalForks}</text>
   `,
     ),
   );
@@ -441,11 +440,11 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
       160,
       `
     <rect x="20" y="152" width="174" height="72" fill="${COLORS.boxFill}" stroke="${COLORS.boxBorder}" stroke-width="1"/>
-    <rect x="30" y="164" width="16" height="16" fill="#FFFFFF"/>
-    <text x="38" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#14171C">!</text>
-    <text x="54" y="174" font-size="11" fill="${COLORS.secondary}">${esc(t.notice1)}</text>
-    <text x="54" y="189" font-size="11" fill="${COLORS.secondary}">${esc(t.notice2)}</text>
-    <text x="54" y="204" font-size="11" fill="${COLORS.secondary}">${esc(t.notice3)}</text>
+    <circle cx="33" cy="170" r="3.5" fill="${COLORS.green}"/>
+    <circle cx="33" cy="170" r="7" fill="none" stroke="${COLORS.green}" stroke-width="1" opacity="0.45"/>
+    <text x="46" y="174" font-size="10" font-weight="700" letter-spacing="0.04em" fill="${COLORS.yellow}">${esc(t.notice1)}</text>
+    <text x="30" y="193" font-size="11" fill="${COLORS.secondary}">${esc(t.notice2)}</text>
+    <text x="30" y="209" font-size="11" fill="${COLORS.secondary}">${esc(t.notice3)}</text>
   `,
     ),
   );
@@ -587,7 +586,7 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
     width: 800,
     height: 256,
     title: t.projSec,
-    desc: `${snapshot.activeProjectCount} active repositories, ${openSlots} reserved slots`,
+    desc: `${snapshot.activeProjectCount} active repositories, ${totalForks} forks`,
     extraDefs: `<clipPath id="proj-grid-clip"><rect x="${gridX - 1}" y="${gridY - 1}" width="576" height="208"/></clipPath>`,
     extraCss,
     body: parts.join('\n'),
