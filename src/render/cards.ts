@@ -154,7 +154,6 @@ export function renderProfileSvg(snapshot: HudSnapshot, lang: Lang, config: HudC
       <rect x="${x}" y="${y}" width="${cardW}" height="${cardH}" fill="${COLORS.boxFill}" stroke="${COLORS.boxBorder}" stroke-width="1"/>
       <text x="${x + 11}" y="${y + 18}" class="lbl" fill="${COLORS.muted}">${esc(t.stats[i])}</text>
       <text x="${x + 11}" y="${y + 46}" class="stat-num">${esc(val)}</text>
-      <polygon points="${x + cardW - 14},${y + 39} ${x + cardW - 10},${y + 46} ${x + cardW - 18},${y + 46}" fill="${COLORS.green}"/>
     `;
     parts.push(fadeGroup(140 + i * 50, box));
   });
@@ -674,7 +673,7 @@ function loadIconVisual(
           .trim();
         if (inner.length > 5) {
           return {
-            iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="${vb}">${inner}</svg>`,
+            iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="${vb}" fill="#FFFFFF">${inner}</svg>`,
           };
         }
       } catch {
@@ -695,7 +694,7 @@ function loadIconVisual(
     }
   }
 
-  return { iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="0 0 16 16">${defaultPathSvg}</svg>` };
+  return { iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="0 0 16 16" fill="#FFFFFF">${defaultPathSvg}</svg>` };
 }
 
 function loadAvatarVisual(options?: { snapshot?: HudSnapshot; iconsDir?: string }): { imageHref: string } {
