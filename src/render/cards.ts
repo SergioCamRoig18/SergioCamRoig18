@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { HUD_CONFIG } from '../config.ts';
 import type { HudConfig, HudSnapshot, Lang, ProjectCardData } from '../types.ts';
 import {
@@ -593,33 +595,143 @@ export function renderProjectsSvg(snapshot: HudSnapshot, lang: Lang): string {
   });
 }
 
-export function renderActionButtonSvg(keycap: string, label: string, active = false): string {
-  const keyW = Math.max(22, keycap.length * 8 + 10);
-  const lblW = Math.max(64, label.length * 7.5 + 16);
-  const totalW = keyW + lblW + 14;
+export type ButtonVisual = string | { keycap?: string; iconSvg?: string; imageHref?: string };
+
+const GITHUB_AVATAR_B64 =
+  'data:image/jpeg;base64,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';
+
+const GITHUB_ICON_SVG =
+  '<path fill="#FFFFFF" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>';
+
+const LINKEDIN_ICON_SVG =
+  '<path fill="#FFFFFF" d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>';
+
+export function renderActionButtonSvg(visual: ButtonVisual, label: string, active = false): string {
   const h = 28;
   const stroke = active ? COLORS.yellow : 'rgba(255,255,255,0.28)';
   const fill = active ? 'rgba(245, 208, 66, 0.16)' : '#1C2028';
   const txtFill = active ? COLORS.yellow : '#EEF1F5';
 
+  let visualElement = '';
+  let boxW = 20;
+
+  if (typeof visual === 'string') {
+    boxW = Math.max(22, visual.length * 8 + 10);
+    visualElement = `
+<rect x="5" y="5" width="${boxW}" height="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+<text x="${5 + boxW / 2}" y="18" text-anchor="middle" font-family="${HUD_FONT}" font-size="11" font-weight="700" fill="#FFFFFF">${esc(visual)}</text>
+`;
+  } else if (visual.imageHref) {
+    boxW = 20;
+    const clipId = 'btn-avatar-clip';
+    visualElement = `
+<defs><clipPath id="${clipId}"><rect x="5" y="4" width="20" height="20" rx="2"/></clipPath></defs>
+<rect x="5" y="4" width="20" height="20" rx="2" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+<image x="5" y="4" width="20" height="20" href="${visual.imageHref}" clip-path="url(#${clipId})" preserveAspectRatio="xMidYMid slice"/>
+`;
+  } else if (visual.iconSvg) {
+    boxW = 20;
+    visualElement = `
+<rect x="5" y="4" width="20" height="20" rx="2" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+<g transform="translate(7, 6)">${visual.iconSvg}</g>
+`;
+  } else if (visual.keycap) {
+    boxW = Math.max(22, visual.keycap.length * 8 + 10);
+    visualElement = `
+<rect x="5" y="5" width="${boxW}" height="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+<text x="${5 + boxW / 2}" y="18" text-anchor="middle" font-family="${HUD_FONT}" font-size="11" font-weight="700" fill="#FFFFFF">${esc(visual.keycap)}</text>
+`;
+  }
+
+  const lblW = Math.max(64, label.length * 7.5 + 16);
+  const totalW = boxW + lblW + 14;
+  const textX = 5 + boxW + 9;
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalW}" height="${h}" viewBox="0 0 ${totalW} ${h}" fill="none" role="img" aria-label="${esc(label)}">
 <rect x="0.5" y="0.5" width="${totalW - 1}" height="${h - 1}" fill="${fill}" stroke="${stroke}" stroke-width="${active ? 1.5 : 1}"/>
-<rect x="5" y="5" width="${keyW}" height="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-<text x="${5 + keyW / 2}" y="18" text-anchor="middle" font-family="${HUD_FONT}" font-size="11" font-weight="700" fill="#FFFFFF">${esc(keycap)}</text>
-<text x="${5 + keyW + 9}" y="18" font-family="${HUD_FONT}" font-size="11.5" font-weight="600" letter-spacing="0.06em" fill="${txtFill}">${esc(label)}</text>
+${visualElement}
+<text x="${textX}" y="18" font-family="${HUD_FONT}" font-size="11.5" font-weight="600" letter-spacing="0.06em" fill="${txtFill}">${esc(label)}</text>
 </svg>
 `;
 }
 
-export function renderAllButtonSvgs(): Record<string, string> {
+function loadIconVisual(
+  name: string,
+  defaultPathSvg: string,
+  iconsDir?: string,
+): { iconSvg?: string; imageHref?: string } {
+  if (iconsDir) {
+    const svgPath = resolve(iconsDir, `${name}.svg`);
+    if (existsSync(svgPath)) {
+      try {
+        const raw = readFileSync(svgPath, 'utf8');
+        const vbMatch = raw.match(/viewBox=["']([^"']+)["']/i);
+        const vb = vbMatch ? vbMatch[1] : '0 0 16 16';
+        const inner = raw
+          .replace(/<\?xml[\s\S]*?\?>/i, '')
+          .replace(/<svg[^>]*>/i, '')
+          .replace(/<\/svg>/i, '')
+          .trim();
+        return {
+          iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="${vb}">${inner}</svg>`,
+        };
+      } catch {
+        // fallback
+      }
+    }
+
+    const pngPath = resolve(iconsDir, `${name}.png`);
+    if (existsSync(pngPath)) {
+      try {
+        const buf = readFileSync(pngPath);
+        return {
+          imageHref: `data:image/png;base64,${buf.toString('base64')}`,
+        };
+      } catch {
+        // fallback
+      }
+    }
+  }
+
+  return { iconSvg: `<svg x="7" y="6" width="16" height="16" viewBox="0 0 16 16">${defaultPathSvg}</svg>` };
+}
+
+function loadAvatarVisual(options?: { snapshot?: HudSnapshot; iconsDir?: string }): { imageHref: string } {
+  if (options?.iconsDir) {
+    for (const ext of ['png', 'jpg', 'jpeg', 'svg']) {
+      const p = resolve(options.iconsDir, `portfolio.${ext}`);
+      if (existsSync(p)) {
+        try {
+          const buf = readFileSync(p);
+          const mime = ext === 'svg' ? 'image/svg+xml' : ext === 'png' ? 'image/png' : 'image/jpeg';
+          return { imageHref: `data:${mime};base64,${buf.toString('base64')}` };
+        } catch {
+          // fallback
+        }
+      }
+    }
+  }
+
+  if (options?.snapshot?.user?.avatarBase64) {
+    return { imageHref: options.snapshot.user.avatarBase64 };
+  }
+
+  return { imageHref: GITHUB_AVATAR_B64 };
+}
+
+export function renderAllButtonSvgs(options: { snapshot?: HudSnapshot; iconsDir?: string } = {}): Record<string, string> {
+  const linkedin = loadIconVisual('linkedin', LINKEDIN_ICON_SVG, options.iconsDir);
+  const github = loadIconVisual('github', GITHUB_ICON_SVG, options.iconsDir);
+  const portfolio = loadAvatarVisual(options);
+
   return {
     'lang-en-active.svg': renderActionButtonSvg('EN', 'ENGLISH', true),
     'lang-en-inactive.svg': renderActionButtonSvg('EN', 'ENGLISH', false),
     'lang-es-active.svg': renderActionButtonSvg('ES', 'ESPAÑOL', true),
     'lang-es-inactive.svg': renderActionButtonSvg('ES', 'ESPAÑOL', false),
-    'btn-portfolio-en.svg': renderActionButtonSvg('ENTER', I18N.en.btnPortfolio, true),
-    'btn-portfolio-es.svg': renderActionButtonSvg('ENTER', I18N.es.btnPortfolio, true),
-    'btn-linkedin.svg': renderActionButtonSvg('L', 'LINKEDIN', false),
-    'btn-github.svg': renderActionButtonSvg('G', 'GITHUB', false),
+    'btn-portfolio-en.svg': renderActionButtonSvg(portfolio, I18N.en.btnPortfolio, false),
+    'btn-portfolio-es.svg': renderActionButtonSvg(portfolio, I18N.es.btnPortfolio, false),
+    'btn-linkedin.svg': renderActionButtonSvg(linkedin, 'LINKEDIN', false),
+    'btn-github.svg': renderActionButtonSvg(github, 'GITHUB', false),
   };
 }

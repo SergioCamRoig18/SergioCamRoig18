@@ -82,6 +82,8 @@ export interface HudSnapshot {
     login: string;
     name: string;
     createdAt: string;
+    avatarUrl?: string;
+    avatarBase64?: string;
   };
   metrics: SummaryMetrics;
   languages: LanguageStat[];

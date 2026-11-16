@@ -235,6 +235,18 @@ function mergeTags(repo: { languages: { name: string }[]; topics: string[] }): s
   return out.slice(0, 3);
 }
 
+async function fetchAvatarBase64(url: string): Promise<string> {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return '';
+    const buf = await res.arrayBuffer();
+    const contentType = res.headers.get('content-type') || 'image/jpeg';
+    return `data:${contentType};base64,${Buffer.from(buf).toString('base64')}`;
+  } catch {
+    return '';
+  }
+}
+
 async function fetchGraphQL(token: string, config: HudConfig, historyPath: string): Promise<HudSnapshot> {
   const now = new Date();
   const from = new Date(now.getTime() - 364 * DAY_MS).toISOString();
@@ -246,6 +258,7 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
         login
         name
         createdAt
+        avatarUrl(size: 64)
         contributionsCollection(from: $from, to: $to) {
           totalCommitContributions
           totalPullRequestContributions
@@ -386,6 +399,9 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
     now,
   );
 
+  const avatarUrl = user.avatarUrl || `https://github.com/${config.username}.png?size=64`;
+  const avatarBase64 = await fetchAvatarBase64(avatarUrl);
+
   return {
     version: 1,
     generatedAt: now.toISOString(),
@@ -394,6 +410,8 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
       login: user.login,
       name: user.name ?? config.displayName,
       createdAt: user.createdAt,
+      avatarUrl,
+      avatarBase64,
     },
     metrics: {
       commits12m: user.contributionsCollection.totalCommitContributions ?? 0,
@@ -444,9 +462,15 @@ async function fetchRepoCommitCount(owner: string, repo: string): Promise<number
 
 async function fetchPublicRest(config: HudConfig, historyPath: string): Promise<HudSnapshot> {
   const now = new Date();
-  const user = await fetchRestJson<{ login: string; name: string | null; created_at: string; public_repos: number }>(
-    `https://api.github.com/users/${config.username}`,
-  );
+  const user = await fetchRestJson<{
+    login: string;
+    name: string | null;
+    created_at: string;
+    public_repos: number;
+    avatar_url?: string;
+  }>(`https://api.github.com/users/${config.username}`);
+  const avatarUrl = user.avatar_url || `https://github.com/${config.username}.png?size=64`;
+  const avatarBase64 = await fetchAvatarBase64(avatarUrl);
   const repos = await fetchRestJson<any[]>(
     `https://api.github.com/users/${config.username}/repos?per_page=100&sort=pushed`,
   );
@@ -546,6 +570,8 @@ async function fetchPublicRest(config: HudConfig, historyPath: string): Promise<
       login: user.login,
       name: user.name ?? config.displayName,
       createdAt: user.created_at,
+      avatarUrl,
+      avatarBase64,
     },
     metrics: {
       commits12m: totalCommits,
@@ -683,6 +709,7 @@ export function buildDemoSnapshot(config: HudConfig): HudSnapshot {
       login: config.username,
       name: config.displayName,
       createdAt: '2023-03-16T22:32:30Z',
+      avatarUrl: `https://github.com/${config.username}.png?size=64`,
     },
     metrics: {
       commits12m: 342,
@@ -757,6 +784,7 @@ export async function collectHudSnapshot(
         login: config.username,
         name: config.displayName,
         createdAt: `${config.memberSinceFallback}-01-01T00:00:00Z`,
+        avatarUrl: `https://github.com/${config.username}.png?size=64`,
       },
       metrics: {
         commits12m: 0,

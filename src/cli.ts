@@ -37,14 +37,12 @@ async function main(): Promise<void> {
 
   const assetsDir = resolve(ROOT_DIR, 'assets');
   const buttonsDir = resolve(assetsDir, 'buttons');
+  const iconsDir = resolve(assetsDir, 'icons');
   mkdirSync(buttonsDir, { recursive: true });
 
-  for (const [filename, svg] of Object.entries(renderAllButtonSvgs())) {
-    writeFileSync(resolve(buttonsDir, filename), svg, 'utf8');
-  }
-
+  let liveSnapshot: HudSnapshot | null = null;
   if (!demoOnly) {
-    const liveSnapshot = await collectHudSnapshot(HUD_CONFIG, ROOT_DIR, { offline });
+    liveSnapshot = await collectHudSnapshot(HUD_CONFIG, ROOT_DIR, { offline });
     writeSnapshotSvgs(liveSnapshot, assetsDir);
     console.log(
       `[hud] Generated live SVGs (${liveSnapshot.source}) -> assets/{en,es} | Active projects: ${liveSnapshot.activeProjectCount}, Languages: ${liveSnapshot.languages.length}`,
@@ -53,6 +51,12 @@ async function main(): Promise<void> {
 
   const demoSnapshot = buildDemoSnapshot(HUD_CONFIG);
   const demoDir = resolve(ROOT_DIR, 'out/demo');
+  writeSnapshotSvgs(demoSnapshot, demoDir);
+
+  const buttonSnapshot = liveSnapshot ?? demoSnapshot;
+  for (const [filename, svg] of Object.entries(renderAllButtonSvgs({ snapshot: buttonSnapshot, iconsDir }))) {
+    writeFileSync(resolve(buttonsDir, filename), svg, 'utf8');
+  }
   writeSnapshotSvgs(demoSnapshot, demoDir);
 
   const previewPath = resolve(ROOT_DIR, 'out/preview.html');
