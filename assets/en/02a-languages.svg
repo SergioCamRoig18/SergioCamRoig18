@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="210" viewBox="0 0 400 210" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">Most Used Languages</title>
-<desc id="desc">JavaScript 43.9%, CSS 38.2%, TypeScript 17.7%, HTML 0.2%</desc>
+<desc id="desc">CSS 41.8%, JavaScript 41.2%, TypeScript 16%, HTML 0.9%</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -56,42 +56,42 @@
 <line x1="18" y1="18" x2="382" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="18" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="26" y="33" class="sec-title">MOST USED LANGUAGES</text><text x="382" y="32" text-anchor="end" class="meta" fill="#9AA4B2">30D DELTA</text>
 <g class="fade" style="animation-delay: 80ms">
         <rect x="18" y="42" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
-        <text x="28" y="56" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">JAVASCRIPT</text>
-        <text x="326" y="56" text-anchor="end" class="meta" fill="#E05A47">▼ -18.3%</text>
-        <text x="372" y="56" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">43.9%</text>
+        <text x="28" y="56" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">CSS</text>
+        <text x="326" y="56" text-anchor="end" class="meta" fill="#F5D042">▲ +5.1%</text>
+        <text x="372" y="56" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">41.8%</text>
         <text x="28" y="69" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="62" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="63" width="133" height="6" fill="#D8DEE6" class="grow"/><rect x="170" y="63" width="55" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>
+        <rect x="37" y="63" width="111" height="6" fill="#D8DEE6" class="grow"/><rect x="148" y="63" width="15" height="6" fill="#F5D042" class="grow"/>
         <text x="372" y="69" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 <g class="fade" style="animation-delay: 150ms">
         <rect x="18" y="81" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
-        <text x="28" y="95" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">CSS</text>
-        <text x="326" y="95" text-anchor="end" class="meta" fill="#F5D042">▲ +1.5%</text>
-        <text x="372" y="95" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">38.2%</text>
+        <text x="28" y="95" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">JAVASCRIPT</text>
+        <text x="326" y="95" text-anchor="end" class="meta" fill="#E05A47">▼ -21.0%</text>
+        <text x="372" y="95" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">41.2%</text>
         <text x="28" y="108" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="101" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="102" width="110" height="6" fill="#D8DEE6" class="grow"/><rect x="147" y="102" width="5" height="6" fill="#F5D042" class="grow"/>
+        <rect x="37" y="102" width="124" height="6" fill="#D8DEE6" class="grow"/><rect x="161" y="102" width="63" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>
         <text x="372" y="108" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 <g class="fade" style="animation-delay: 220ms">
         <rect x="18" y="120" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
         <text x="28" y="134" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">TYPESCRIPT</text>
-        <text x="326" y="134" text-anchor="end" class="meta" fill="#F5D042">▲ +17.0%</text>
-        <text x="372" y="134" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">17.7%</text>
+        <text x="326" y="134" text-anchor="end" class="meta" fill="#F5D042">▲ +15.3%</text>
+        <text x="372" y="134" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">16.0%</text>
         <text x="28" y="147" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="140" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="141" width="2" height="6" fill="#D8DEE6" class="grow"/><rect x="39" y="141" width="51" height="6" fill="#F5D042" class="grow"/>
+        <rect x="37" y="141" width="2" height="6" fill="#D8DEE6" class="grow"/><rect x="39" y="141" width="46" height="6" fill="#F5D042" class="grow"/>
         <text x="372" y="147" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 <g class="fade" style="animation-delay: 290ms">
         <rect x="18" y="159" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
         <text x="28" y="173" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">HTML</text>
-        <text x="326" y="173" text-anchor="end" class="meta" fill="#E05A47">▼ -0.2%</text>
-        <text x="372" y="173" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">0.2%</text>
+        <text x="326" y="173" text-anchor="end" class="meta" fill="#F5D042">▲ +0.5%</text>
+        <text x="372" y="173" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">0.9%</text>
         <text x="28" y="186" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="179" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="180" width="1" height="6" fill="#D8DEE6" class="grow"/><rect x="38" y="180" width="4" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>
+        <rect x="37" y="180" width="4" height="6" fill="#F5D042" class="grow"/>
         <text x="372" y="186" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 </g>
