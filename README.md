@@ -3,26 +3,26 @@
 <div align="center">
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/01-profile.svg" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
+  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=ba9b781c" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/02a-languages.svg" width="396" alt="Most Used Languages (30D Delta)" /></a>
-  <a href="#hud-top"><img src="assets/en/02b-weekly.svg" width="396" alt="Weekly Activity Rhythm" /></a>
+  <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=52e5cee6" width="396" alt="Most Used Languages (30D Delta)" /></a>
+  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=3620d849" width="396" alt="Weekly Activity Rhythm" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/03-stack.svg" width="800" alt="Tech Stack & Tools" /></a>
+  <a href="#hud-top"><img src="assets/en/03-stack.svg?v=975ec78b" width="800" alt="Tech Stack & Tools" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/04-projects.svg" width="800" alt="Featured Projects" /></a>
+  <a href="#hud-top"><img src="assets/en/04-projects.svg?v=2ee29046" width="800" alt="Featured Projects" /></a>
 </p>
 
 <p align="center">
-  <a href="https://sergiocamroig18.github.io"><img src="assets/buttons/btn-portfolio-en.svg" alt="Web Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/sergio-camacho-roig-343550318/"><img src="assets/buttons/btn-linkedin.svg" alt="LinkedIn" /></a>
-  <a href="https://github.com/SergioCamRoig18"><img src="assets/buttons/btn-github.svg" alt="GitHub" /></a>
+  <a href="https://sergiocamroig18.github.io"><img src="assets/buttons/btn-portfolio-en.svg?v=aae0e463" alt="Web Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/sergio-camacho-roig-343550318/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
+  <a href="https://github.com/SergioCamRoig18"><img src="assets/buttons/btn-github.svg?v=c23dc01c" alt="GitHub" /></a>
 </p>
 
 </div>
