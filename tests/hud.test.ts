@@ -3,9 +3,11 @@ import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
-import { buildDemoSnapshot, buildProjectPages, computeLanguagesWithDelta } from '../src/collect.ts';
+import { applyAssetCacheBusters, computeAssetHash } from '../src/cli.ts';
+import { buildDemoSnapshot, buildProjectPages, computeLanguagesWithDelta, mergeTags } from '../src/collect.ts';
 import { HUD_CONFIG } from '../src/config.ts';
 import {
+  formatFittingTags,
   renderAllButtonSvgs,
   renderLanguagesSvg,
   renderProfileSvg,
@@ -148,4 +150,76 @@ test('renderProjectsSvg shows animated side arrows only when > 6 pages exist, hi
   assert.ok(svg.includes('85.71%, 98.59% { opacity: 0; }'), 'right arrow hidden on last page');
   assert.ok(svg.includes('PAGE 7/7'), '7th page label should exist');
   assert.ok(!svg.includes('pg-seg-6'), 'only up to 6 visible segment bars should be rendered');
+});
+
+test('mergeTags prioritizes languages, then configured tech topics, deduplicates, and formats cleanly', () => {
+  const showcaseTags = mergeTags(
+    {
+      languages: [],
+      topics: [
+        'cloudflare-pages',
+        'fan-site',
+        'interactive-map',
+        'leaflet',
+        'nds',
+        'nintendo-ds',
+        'react',
+        'threejs',
+        'typescript',
+        'vite',
+        'wordle',
+        'zubo',
+      ],
+    },
+    HUD_CONFIG.priorityTopics,
+  );
+  assert.deepEqual(showcaseTags, ['TypeScript', 'React', 'Three.js', 'Leaflet', 'Vite', 'Cloudflare']);
+
+  const codeRepoTags = mergeTags(
+    {
+      languages: [{ name: 'TypeScript' }, { name: 'CSS' }],
+      topics: ['typescript', 'react', 'fan-site', 'docker'],
+    },
+    HUD_CONFIG.priorityTopics,
+  );
+  assert.deepEqual(codeRepoTags, ['TypeScript', 'CSS', 'React', 'Docker', 'fan-site']);
+});
+
+test('formatFittingTags packs tags cleanly within maxChars without ellipsis truncation', () => {
+  assert.equal(
+    formatFittingTags(['TypeScript', 'React', 'Three.js', 'Leaflet', 'Vite'], 28, 3),
+    '+TypeScript +React +Three.js',
+  );
+  assert.equal(
+    formatFittingTags(['Cloudflare', 'fan-site', 'interactive-map'], 28, 3),
+    '+Cloudflare +fan-site',
+  );
+  assert.equal(
+    formatFittingTags(['Cloudflare', 'interactive-maps', 'Vite'], 28, 3),
+    '+Cloudflare +Vite',
+  );
+  assert.ok(!formatFittingTags(['Cloudflare', 'fan-site', 'interactive-map'], 28, 3).includes('…'));
+});
+
+test('applyAssetCacheBusters injects and updates deterministic SHA-256 ?v= query params', () => {
+  const hashA = computeAssetHash('<svg>v1</svg>');
+  const hashB = computeAssetHash('<svg>v2</svg>');
+  assert.equal(hashA.length, 8);
+  assert.notEqual(hashA, hashB);
+
+  const raw = [
+    '<img src="assets/en/04-projects.svg" width="800" />',
+    '<img src="assets/buttons/btn-github.svg?v=00000000" />',
+  ].join('\n');
+
+  const firstPass = applyAssetCacheBusters(raw, () => hashA);
+  assert.ok(firstPass.includes(`src="assets/en/04-projects.svg?v=${hashA}"`));
+  assert.ok(firstPass.includes(`src="assets/buttons/btn-github.svg?v=${hashA}"`));
+
+  // Idempotent when SVG content has not changed
+  assert.equal(applyAssetCacheBusters(firstPass, () => hashA), firstPass);
+
+  // Updates immediately when SVG hash changes
+  const secondPass = applyAssetCacheBusters(firstPass, () => hashB);
+  assert.ok(secondPass.includes(`src="assets/en/04-projects.svg?v=${hashB}"`));
 });

@@ -185,7 +185,7 @@ export function buildProjectPages(
     forks: p.forks,
     commits: p.commits,
     updatedAt: p.updatedAt,
-    tags: p.tags.slice(0, 3),
+    tags: p.tags.slice(0, 6),
     isPinned: p.isPinned,
   }));
 
@@ -216,23 +216,62 @@ export function buildProjectPages(
   return { activeCount: activeCards.length, pages };
 }
 
-function mergeTags(repo: { languages: { name: string }[]; topics: string[] }): string[] {
+function normalizeTagKey(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9#]+/g, '');
+}
+
+export function mergeTags(
+  repo: { languages: { name: string }[]; topics: string[] },
+  priorityTopics: Record<string, string> = {},
+): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
+
+  const pushUnique = (label: string) => {
+    const clean = label.trim();
+    if (!clean) return;
+    const key = normalizeTagKey(clean);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    out.push(clean);
+  };
+
+  // Tier 1: GitHub-detected repository languages (already ordered by byte size)
   for (const lang of repo.languages) {
-    if (!seen.has(lang.name.toLowerCase())) {
-      seen.add(lang.name.toLowerCase());
-      out.push(lang.name);
-    }
+    pushUnique(lang.name);
   }
+
+  // Tier 2: Priority technical topics in configured order with clean display labels
+  const priorityOrder = new Map<string, { rank: number; label: string }>();
+  Object.entries(priorityTopics).forEach(([slug, label], rank) => {
+    priorityOrder.set(slug.toLowerCase(), { rank, label });
+  });
+
+  const matchedPriority: { rank: number; label: string }[] = [];
+  const otherTopics: string[] = [];
+
   for (const topic of repo.topics) {
     const clean = topic.trim();
-    if (clean && !seen.has(clean.toLowerCase())) {
-      seen.add(clean.toLowerCase());
-      out.push(clean);
+    if (!clean) continue;
+    const match = priorityOrder.get(clean.toLowerCase());
+    if (match) {
+      matchedPriority.push(match);
+    } else {
+      otherTopics.push(clean);
     }
   }
-  return out.slice(0, 3);
+
+  matchedPriority.sort((a, b) => a.rank - b.rank);
+  for (const item of matchedPriority) {
+    pushUnique(item.label);
+  }
+
+  // Tier 3: Remaining descriptive topics as fallback
+  for (const topic of otherTopics) {
+    pushUnique(topic);
+  }
+
+  return out.slice(0, 6);
 }
 
 async function fetchAvatarBase64(url: string): Promise<string> {
@@ -288,7 +327,7 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
             stargazerCount
             forkCount
             pushedAt
-            repositoryTopics(first: 5) {
+            repositoryTopics(first: 20) {
               nodes {
                 topic { name }
               }
@@ -380,7 +419,7 @@ async function fetchGraphQL(token: string, config: HudConfig, historyPath: strin
       forks: repo.forkCount ?? 0,
       commits: repo.defaultBranchRef?.target?.history?.totalCount ?? 0,
       updatedAt: repo.pushedAt ?? '',
-      tags: mergeTags({ languages: repoLangs, topics }),
+      tags: mergeTags({ languages: repoLangs, topics }, config.priorityTopics),
       isPinned,
       isPrivate: Boolean(repo.isPrivate),
       isFork: Boolean(repo.isFork),
@@ -515,7 +554,7 @@ async function fetchPublicRest(config: HudConfig, historyPath: string): Promise<
       forks: r.forks_count ?? 0,
       commits,
       updatedAt: r.pushed_at ?? r.updated_at ?? '',
-      tags: mergeTags({ languages: repoLangs, topics: Array.isArray(r.topics) ? r.topics : [] }),
+      tags: mergeTags({ languages: repoLangs, topics: Array.isArray(r.topics) ? r.topics : [] }, config.priorityTopics),
       isPinned: false,
       isPrivate: Boolean(r.private),
       isFork: Boolean(r.fork),

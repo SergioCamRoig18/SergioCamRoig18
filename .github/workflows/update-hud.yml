@@ -35,12 +35,12 @@ jobs:
 
       - name: Commit and push updated HUD assets
         run: |
-          if git diff --quiet assets history; then
+          if git diff --quiet assets history README.md README.es.md; then
             echo "No HUD changes detected."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets history
+          git add assets history README.md README.es.md
           git commit -m "chore(hud): update profile telemetry SVGs"
           git push

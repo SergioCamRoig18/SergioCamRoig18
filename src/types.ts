@@ -31,6 +31,7 @@ export interface HudConfig {
   profileCards: ProfileCardConfig[];
   techStack: TechCategoryConfig[];
   ignoredRepos: string[];
+  priorityTopics: Record<string, string>;
   maxLanguages: number;
   projectsPerPage: number;
   languageDeltaDays: number;

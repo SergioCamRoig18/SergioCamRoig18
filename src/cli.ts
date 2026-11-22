@@ -1,4 +1,5 @@
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDemoSnapshot, collectHudSnapshot } from './collect.ts';
@@ -27,6 +28,46 @@ function writeSnapshotSvgs(snapshot: HudSnapshot, targetRoot: string): void {
     writeFileSync(resolve(dir, '02b-weekly.svg'), renderWeeklySvg(snapshot, lang), 'utf8');
     writeFileSync(resolve(dir, '03-stack.svg'), renderStackSvg(lang, HUD_CONFIG), 'utf8');
     writeFileSync(resolve(dir, '04-projects.svg'), renderProjectsSvg(snapshot, lang), 'utf8');
+  }
+}
+
+/** Compute an 8-char SHA-256 hash of an asset file for deterministic cache-busting. */
+export function computeAssetHash(content: Buffer | string): string {
+  return createHash('sha256').update(content).digest('hex').slice(0, 8);
+}
+
+/** Rewrite local SVG image src attributes in a README to include ?v=<hash> for instant GitHub Camo refresh. */
+export function applyAssetCacheBusters(
+  readmeContent: string,
+  hashResolver: (assetRelPath: string) => string | null,
+): string {
+  return readmeContent.replace(
+    /src="(assets\/[^"?]+\.svg)(?:\?v=[a-f0-9]+)?"/g,
+    (fullMatch, assetRelPath: string) => {
+      const hash = hashResolver(assetRelPath);
+      return hash ? `src="${assetRelPath}?v=${hash}"` : fullMatch;
+    },
+  );
+}
+
+function syncReadmeCacheBusters(rootDir: string): void {
+  const hashCache = new Map<string, string | null>();
+  const resolveHash = (assetRelPath: string): string | null => {
+    if (hashCache.has(assetRelPath)) return hashCache.get(assetRelPath) ?? null;
+    const fullPath = resolve(rootDir, assetRelPath);
+    const hash = existsSync(fullPath) ? computeAssetHash(readFileSync(fullPath)) : null;
+    hashCache.set(assetRelPath, hash);
+    return hash;
+  };
+
+  for (const readmeName of ['README.md', 'README.es.md']) {
+    const readmePath = resolve(rootDir, readmeName);
+    if (!existsSync(readmePath)) continue;
+    const current = readFileSync(readmePath, 'utf8');
+    const updated = applyAssetCacheBusters(current, resolveHash);
+    if (updated !== current) {
+      writeFileSync(readmePath, updated, 'utf8');
+    }
   }
 }
 
@@ -59,13 +100,27 @@ async function main(): Promise<void> {
   }
   writeSnapshotSvgs(demoSnapshot, demoDir);
 
+  if (!demoOnly) {
+    syncReadmeCacheBusters(ROOT_DIR);
+  }
+
   const previewPath = resolve(ROOT_DIR, 'out/preview.html');
   mkdirSync(dirname(previewPath), { recursive: true });
   writeFileSync(previewPath, buildPreviewHtml(HUD_CONFIG), 'utf8');
   console.log(`[hud] Preview ready at ${previewPath}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const entryPath = typeof process.argv[1] === 'string' ? resolve(process.argv[1]) : '';
+const currentPath = fileURLToPath(import.meta.url);
+const isDirectRun =
+  entryPath !== '' &&
+  (process.platform === 'win32'
+    ? entryPath.toLowerCase() === currentPath.toLowerCase()
+    : entryPath === currentPath);
+
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

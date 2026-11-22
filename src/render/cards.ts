@@ -344,6 +344,29 @@ export function renderStackSvg(lang: Lang, config: HudConfig = HUD_CONFIG): stri
   });
 }
 
+/** Pack up to maxTags tags that fit cleanly inside maxChars without mid-word ellipsis truncation. */
+export function formatFittingTags(tags: string[], maxChars = 28, maxTags = 3): string {
+  const chosen: string[] = [];
+  let length = 0;
+
+  for (const raw of tags) {
+    if (chosen.length >= maxTags) break;
+    const token = `+${raw.trim()}`;
+    if (token.length <= 1) continue;
+    const nextLength = chosen.length === 0 ? token.length : length + 1 + token.length;
+    if (nextLength <= maxChars) {
+      chosen.push(token);
+      length = nextLength;
+    }
+  }
+
+  if (chosen.length === 0 && tags.length > 0) {
+    return truncate(`+${tags[0].trim()}`, maxChars);
+  }
+
+  return chosen.join(' ');
+}
+
 function renderProjectCard(
   card: ProjectCardData,
   x: number,
@@ -385,7 +408,7 @@ function renderProjectCard(
     .join('');
 
   const metaLine = `${card.commits} ${t.commitsWord} · ${t.updatedWord} ${formatMonthYear(card.updatedAt, lang)}`;
-  const tagsLine = card.tags.map((tg) => `+${tg}`).join('  ');
+  const tagsLine = formatFittingTags(card.tags, 28, 3);
 
   return `
     <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>
@@ -393,7 +416,7 @@ function renderProjectCard(
     ${badgeSvg}
     ${descSvg}
     <text x="${x + 10}" y="${y + 70}" font-size="10.5" fill="${COLORS.muted}">${esc(truncate(metaLine, 30))}</text>
-    <text x="${x + 10}" y="${y + 87}" font-size="11" font-weight="600" fill="${COLORS.green}">${esc(truncate(tagsLine, 30))}</text>
+    <text x="${x + 10}" y="${y + 87}" font-size="11" font-weight="600" fill="${COLORS.green}">${esc(tagsLine)}</text>
   `;
 }
 
