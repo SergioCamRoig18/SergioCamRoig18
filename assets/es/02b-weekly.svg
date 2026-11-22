@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="210" viewBox="0 0 400 210" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">Ritmo Semanal</title>
-<desc id="desc">PICO: JUE</desc>
+<desc id="desc">PICO: DOM</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -53,49 +53,49 @@
 <rect width="400" height="210" fill="url(#aw-crosshairs)"/>
 <rect x="0.5" y="0.5" width="399" height="209" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
 <g fill="#EEF1F5">
-<line x1="18" y1="18" x2="382" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="18" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="26" y="33" class="sec-title">RITMO SEMANAL</text><text x="382" y="32" text-anchor="end" class="meta" fill="#F5D042">PICO: JUE</text>
+<line x1="18" y1="18" x2="382" y2="18" stroke="rgba(255,255,255,0.52)" stroke-width="1"/><rect x="18" y="27" width="3.5" height="3.5" fill="#FFFFFF"/><text x="26" y="33" class="sec-title">RITMO SEMANAL</text><text x="382" y="32" text-anchor="end" class="meta" fill="#F5D042">PICO: DOM</text>
 <rect x="18" y="42" width="364" height="151" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
 <g class="fade" style="animation-delay: 60ms">
       <text x="28" y="63" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">LUN</text>
       <rect x="68" y="55" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="56" width="124" height="7" fill="#D8DEE6" class="grow"/>
+      <rect x="69" y="56" width="119" height="7" fill="#D8DEE6" class="grow"/>
       <text x="370" y="63" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">22</text>
     </g>
 <g class="fade" style="animation-delay: 105ms">
       <text x="28" y="83" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">MAR</text>
       <rect x="68" y="75" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="76" width="181" height="7" fill="#D8DEE6" class="grow"/>
+      <rect x="69" y="76" width="173" height="7" fill="#D8DEE6" class="grow"/>
       <text x="370" y="83" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">32</text>
     </g>
 <g class="fade" style="animation-delay: 150ms">
       <text x="28" y="103" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">MIÉ</text>
       <rect x="68" y="95" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="96" width="141" height="7" fill="#D8DEE6" class="grow"/>
+      <rect x="69" y="96" width="135" height="7" fill="#D8DEE6" class="grow"/>
       <text x="370" y="103" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">25</text>
     </g>
 <g class="fade" style="animation-delay: 195ms">
-      <text x="28" y="123" font-size="11.5" font-weight="700" letter-spacing="0.05em" fill="#F5D042">JUE</text>
-      <rect x="68" y="115" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="#F5D042" stroke-width="1"/>
-      <rect x="69" y="116" width="260" height="7" fill="#F5D042" class="grow"/>
-      <text x="370" y="123" text-anchor="end" font-size="11.5" font-weight="700" fill="#F5D042">46</text>
+      <text x="28" y="123" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">JUE</text>
+      <rect x="68" y="115" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+      <rect x="69" y="116" width="249" height="7" fill="#D8DEE6" class="grow"/>
+      <text x="370" y="123" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">46</text>
     </g>
 <g class="fade" style="animation-delay: 240ms">
       <text x="28" y="143" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">VIE</text>
       <rect x="68" y="135" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="136" width="203" height="7" fill="#D8DEE6" class="grow"/>
+      <rect x="69" y="136" width="195" height="7" fill="#D8DEE6" class="grow"/>
       <text x="370" y="143" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">36</text>
     </g>
 <g class="fade" style="animation-delay: 285ms">
       <text x="28" y="163" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">SÁB</text>
       <rect x="68" y="155" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="156" width="192" height="7" fill="#D8DEE6" class="grow"/>
-      <text x="370" y="163" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">34</text>
+      <rect x="69" y="156" width="206" height="7" fill="#D8DEE6" class="grow"/>
+      <text x="370" y="163" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">38</text>
     </g>
 <g class="fade" style="animation-delay: 330ms">
-      <text x="28" y="183" font-size="11.5" font-weight="500" letter-spacing="0.05em" fill="#9AA4B2">DOM</text>
-      <rect x="68" y="175" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
-      <rect x="69" y="176" width="260" height="7" fill="#D8DEE6" class="grow"/>
-      <text x="370" y="183" text-anchor="end" font-size="11.5" font-weight="500" fill="#EEF1F5">46</text>
+      <text x="28" y="183" font-size="11.5" font-weight="700" letter-spacing="0.05em" fill="#F5D042">DOM</text>
+      <rect x="68" y="175" width="262" height="9" fill="rgba(0, 0, 0, 0.42)" stroke="#F5D042" stroke-width="1"/>
+      <rect x="69" y="176" width="260" height="7" fill="#F5D042" class="grow"/>
+      <text x="370" y="183" text-anchor="end" font-size="11.5" font-weight="700" fill="#F5D042">48</text>
     </g>
 </g>
 </svg>
