@@ -22,7 +22,6 @@
 <p align="center">
   <a href="https://sergiocamroig18.github.io"><img src="assets/buttons/btn-portfolio-en.svg?v=aae0e463" alt="Web Portfolio" /></a>
   <a href="https://www.linkedin.com/in/sergio-camacho-roig-343550318/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
-  <a href="https://github.com/SergioCamRoig18"><img src="assets/buttons/btn-github.svg?v=c23dc01c" alt="GitHub" /></a>
 </p>
 
 </div>
