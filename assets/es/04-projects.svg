@@ -85,7 +85,7 @@
     <text x="216" y="38" font-size="13" font-weight="600" fill="#FFFFFF">Zubopedia-Web</text>
     <text x="382" y="38" text-anchor="end" font-size="11.5" font-weight="700" fill="#F5D042">01</text>
     <text x="216" y="56" font-size="11.5" fill="#C7D0DB">Interactive 3D encyclopedia,</text><text x="216" y="70" font-size="11.5" fill="#C7D0DB">world maps &amp; daily minigames</text>
-    <text x="216" y="88" font-size="10.5" fill="#9AA4B2">6 Commits · Act. Nov 2026</text>
+    <text x="216" y="88" font-size="10.5" fill="#9AA4B2">7 Commits · Act. Nov 2026</text>
     <text x="216" y="105" font-size="11" font-weight="600" fill="#4ADE80">+TypeScript +React +Three.js</text>
   
       <rect x="400" y="18" width="186" height="99" fill="rgba(34, 39, 46, 0.62)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>

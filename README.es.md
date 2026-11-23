@@ -3,12 +3,12 @@
 <div align="center">
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=1f6b7c08" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
+  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=83507dae" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=bbd1f13c" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
-  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=05bf89f4" width="396" alt="Ritmo Semanal" /></a>
+  <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=e9ca6cf2" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
+  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=ef8e936c" width="396" alt="Ritmo Semanal" /></a>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/04-projects.svg?v=e3dfb760" width="800" alt="Proyectos Destacados" /></a>
+  <a href="#hud-top"><img src="assets/es/04-projects.svg?v=c6bffdcf" width="800" alt="Proyectos Destacados" /></a>
 </p>
 
 <p align="center">
