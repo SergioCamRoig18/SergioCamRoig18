@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="256" viewBox="0 0 800 256" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">Featured Projects</title>
-<desc id="desc">1 active repositories, 0 forks</desc>
+<desc id="desc">2 active repositories, 0 forks</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -57,7 +57,7 @@
 <g class="fade" style="animation-delay: 60ms">
     <rect x="20" y="42" width="84" height="44" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
     <text x="62" y="57" text-anchor="middle" class="lbl" fill="#9AA4B2">PROJECTS</text>
-    <text x="62" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="62" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">2</text>
 
     <rect x="110" y="42" width="84" height="44" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
     <text x="152" y="57" text-anchor="middle" class="lbl" fill="#9AA4B2">FORKS</text>
@@ -66,7 +66,7 @@
 <g class="fade" style="animation-delay: 110ms">
     <rect x="20" y="94" width="174" height="50" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
     <text x="30" y="113" font-size="11.5" fill="#9AA4B2">Public Repos</text>
-    <text x="184" y="113" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="184" y="113" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
     <text x="30" y="132" font-size="11.5" fill="#9AA4B2">Sync</text>
     <text x="184" y="132" text-anchor="end" font-size="11.5" font-weight="700" fill="#4ADE80">ACTIONS</text>
   </g>
@@ -88,15 +88,13 @@
     <text x="216" y="88" font-size="10.5" fill="#9AA4B2">7 Commits · Updated Nov 2026</text>
     <text x="216" y="105" font-size="11" font-weight="600" fill="#4ADE80">+TypeScript +React +Three.js</text>
   
-      <rect x="400" y="18" width="186" height="99" fill="rgba(34, 39, 46, 0.62)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
-      <text x="410" y="38" font-size="12.5" font-weight="600" fill="rgba(255,255,255,0.48)">Slot 02 // Reserved</text>
-      <g transform="translate(564 26) scale(0.55)" fill="rgba(255,255,255,0.42)">
-    <path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9V7z"/>
-  </g>
-      <text x="410" y="70" font-size="11" fill="rgba(255,255,255,0.38)">Status:</text>
-      <text x="576" y="70" text-anchor="end" font-size="11" fill="rgba(255,255,255,0.45)">Locked</text>
-      <text x="410" y="100" font-size="11" fill="rgba(255,255,255,0.34)">Awaiting deployment...</text>
-    
+    <rect x="400" y="18" width="186" height="99" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
+    <text x="410" y="38" font-size="13" font-weight="600" fill="#FFFFFF">SergioCamRoig18.gi…</text>
+    <text x="576" y="38" text-anchor="end" font-size="11.5" font-weight="700" fill="#F5D042">02</text>
+    <text x="410" y="56" font-size="11.5" fill="#C7D0DB">Software Engineering</text><text x="410" y="70" font-size="11.5" fill="#C7D0DB">portfolio with a Call of</text>
+    <text x="410" y="88" font-size="10.5" fill="#9AA4B2">2 Commits · Updated Nov 2026</text>
+    <text x="410" y="105" font-size="11" font-weight="600" fill="#4ADE80">+TypeScript +CSS +HTML</text>
+  
       <rect x="594" y="18" width="186" height="99" fill="rgba(34, 39, 46, 0.62)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
       <text x="604" y="38" font-size="12.5" font-weight="600" fill="rgba(255,255,255,0.48)">Slot 03 // Reserved</text>
       <g transform="translate(758 26) scale(0.55)" fill="rgba(255,255,255,0.42)">

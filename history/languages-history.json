@@ -70,5 +70,14 @@
       "TypeScript": 16.2,
       "HTML": 1.1
     }
+  },
+  {
+    "date": "2026-11-24",
+    "percentages": {
+      "CSS": 41.4,
+      "TypeScript": 29.4,
+      "JavaScript": 28.2,
+      "HTML": 1.1
+    }
   }
 ]

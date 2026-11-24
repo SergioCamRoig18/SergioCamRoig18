@@ -3,12 +3,12 @@
 <div align="center">
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=02454e73" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
+  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=7cf60977" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=d61bd402" width="396" alt="Most Used Languages (30D Delta)" /></a>
-  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=cef8390d" width="396" alt="Weekly Activity Rhythm" /></a>
+  <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=12bdf842" width="396" alt="Most Used Languages (30D Delta)" /></a>
+  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=a3feb4a6" width="396" alt="Weekly Activity Rhythm" /></a>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/04-projects.svg?v=00e18781" width="800" alt="Featured Projects" /></a>
+  <a href="#hud-top"><img src="assets/en/04-projects.svg?v=605ef39e" width="800" alt="Featured Projects" /></a>
 </p>
 
 <p align="center">
