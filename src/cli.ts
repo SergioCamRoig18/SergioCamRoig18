@@ -71,6 +71,51 @@ function syncReadmeCacheBusters(rootDir: string): void {
   }
 }
 
+/** Build a lightweight, public-safe telemetry payload for the web portfolio (no base64 avatar or private repo data). */
+export function buildPublicTelemetryPayload(snapshot: HudSnapshot) {
+  const totalForks = snapshot.projectPages
+    .flat()
+    .filter((p) => !p.isLocked)
+    .reduce((sum, p) => sum + (p.forks || 0), 0);
+
+  return {
+    version: snapshot.version,
+    generatedAt: snapshot.generatedAt,
+    source: snapshot.source,
+    user: {
+      login: snapshot.user.login,
+      name: snapshot.user.name,
+      createdAt: snapshot.user.createdAt,
+      avatarUrl: snapshot.user.avatarUrl,
+    },
+    metrics: snapshot.metrics,
+    languages: snapshot.languages,
+    weekly: snapshot.weekly,
+    publicRepoCount: snapshot.publicRepoCount,
+    activeProjectCount: snapshot.activeProjectCount,
+    totalForks,
+  };
+}
+
+function writePublicTelemetryJson(snapshot: HudSnapshot, rootDir: string): void {
+  const outPath = resolve(rootDir, 'data/telemetry.json');
+  const nextPayload = buildPublicTelemetryPayload(snapshot);
+
+  if (existsSync(outPath)) {
+    try {
+      const prev = JSON.parse(readFileSync(outPath, 'utf8')) as Record<string, unknown>;
+      const prevComparable = JSON.stringify({ ...prev, generatedAt: '' });
+      const nextComparable = JSON.stringify({ ...nextPayload, generatedAt: '' });
+      if (prevComparable === nextComparable) return;
+    } catch {
+      // Rewrite if existing file is malformed
+    }
+  }
+
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, `${JSON.stringify(nextPayload, null, 2)}\n`, 'utf8');
+}
+
 async function main(): Promise<void> {
   const args = new Set(process.argv.slice(2));
   const offline = args.has('--offline');
@@ -85,8 +130,9 @@ async function main(): Promise<void> {
   if (!demoOnly) {
     liveSnapshot = await collectHudSnapshot(HUD_CONFIG, ROOT_DIR, { offline });
     writeSnapshotSvgs(liveSnapshot, assetsDir);
+    writePublicTelemetryJson(liveSnapshot, ROOT_DIR);
     console.log(
-      `[hud] Generated live SVGs (${liveSnapshot.source}) -> assets/{en,es} | Active projects: ${liveSnapshot.activeProjectCount}, Languages: ${liveSnapshot.languages.length}`,
+      `[hud] Generated live SVGs (${liveSnapshot.source}) -> assets/{en,es} & data/telemetry.json | Active projects: ${liveSnapshot.activeProjectCount}, Languages: ${liveSnapshot.languages.length}`,
     );
   }
 

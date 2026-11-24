@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
-import { applyAssetCacheBusters, computeAssetHash } from '../src/cli.ts';
+import { applyAssetCacheBusters, buildPublicTelemetryPayload, computeAssetHash } from '../src/cli.ts';
 import { buildDemoSnapshot, buildProjectPages, computeLanguagesWithDelta, mergeTags } from '../src/collect.ts';
 import { HUD_CONFIG } from '../src/config.ts';
 import {
@@ -230,4 +230,16 @@ test('applyAssetCacheBusters injects and updates deterministic SHA-256 ?v= query
   // Updates immediately when SVG hash changes
   const secondPass = applyAssetCacheBusters(firstPass, () => hashB);
   assert.ok(secondPass.includes(`src="assets/en/04-projects.svg?v=${hashB}"`));
+});
+
+test('buildPublicTelemetryPayload strips base64 avatar and sums active project forks', () => {
+  const demo = buildDemoSnapshot(HUD_CONFIG);
+  const withAvatar = { ...demo, user: { ...demo.user, avatarBase64: 'data:image/png;base64,SECRET' } };
+  const payload = buildPublicTelemetryPayload(withAvatar);
+
+  assert.equal('avatarBase64' in payload.user, false);
+  assert.equal(payload.version, 1);
+  assert.equal(payload.metrics.commits12m, demo.metrics.commits12m);
+  assert.ok(payload.totalForks > 0);
+  assert.equal(payload.languages.length, demo.languages.length);
 });
