@@ -59,8 +59,16 @@ test('buildProjectPages prioritizes pinned repos, sorts by success, and pads wit
     languages: [],
   });
 
-  // Fewer than 6 active repos -> 1 page padded to 6 with locked slots
-  const few = buildProjectPages([makeRepo('alpha', 2), makeRepo('pinned-low', 0, true)], HUD_CONFIG);
+  // Fewer than 6 active repos -> 1 page padded to 6 with locked slots (and ignoredRepos excluded unless pinned)
+  const few = buildProjectPages(
+    [
+      makeRepo('alpha', 2),
+      makeRepo('pinned-low', 0, true),
+      makeRepo('SergioCamRoig18', 5, false),
+      makeRepo('SergioCamRoig18.github.io', 5, false),
+    ],
+    HUD_CONFIG,
+  );
   assert.equal(few.activeCount, 2);
   assert.equal(few.pages.length, 1);
   assert.equal(few.pages[0].length, 6);

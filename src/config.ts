@@ -62,8 +62,8 @@ export const HUD_CONFIG: HudConfig = {
       items: 'Git · GitHub · Docker',
     },
   ],
-  // Profile special repo is excluded from Featured Projects unless explicitly pinned
-  ignoredRepos: ['SergioCamRoig18'],
+  // Repos hidden from Featured Projects cards (still counted in language & overall profile metrics)
+  ignoredRepos: ['SergioCamRoig18', 'SergioCamRoig18.github.io'],
   // Ordered tech-topic priority map (slug -> formatted badge label) for Featured Projects cards
   priorityTopics: {
     typescript: 'TypeScript',
