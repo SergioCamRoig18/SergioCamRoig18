@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-24T01:39:04.684Z",
+  "source": "graphql",
+  "user": {
+    "login": "SergioCamRoig18",
+    "name": "Sergio Camacho Roig",
+    "createdAt": "2023-03-16T22:32:30Z",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/128100992?s=64&u=70ec6fdffeae02651adfeeac75706d57af6ce9be&v=4"
+  },
+  "metrics": {
+    "commits12m": 257,
+    "repositories": 4,
+    "pullRequests": 8,
+    "activeDaysPercent": 18,
+    "bestStreakDays": 18,
+    "totalStars": 0,
+    "memberSince": 2023
+  },
+  "languages": [
+    {
+      "name": "TypeScript",
+      "bytes": 277139,
+      "percent": 38.5,
+      "color": "#3178c6",
+      "delta30d": 37.8
+    },
+    {
+      "name": "CSS",
+      "bytes": 259038,
+      "percent": 36,
+      "color": "#663399",
+      "delta30d": -0.7
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 176542,
+      "percent": 24.5,
+      "color": "#f1e05a",
+      "delta30d": -37.7
+    },
+    {
+      "name": "HTML",
+      "bytes": 6723,
+      "percent": 0.9,
+      "color": "#e34c26",
+      "delta30d": 0.5
+    }
+  ],
+  "weekly": [
+    {
+      "dayIndex": 0,
+      "count": 28,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 1,
+      "count": 36,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 2,
+      "count": 25,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 3,
+      "count": 46,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 4,
+      "count": 36,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 5,
+      "count": 38,
+      "isPeak": false
+    },
+    {
+      "dayIndex": 6,
+      "count": 63,
+      "isPeak": true
+    }
+  ],
+  "publicRepoCount": 3,
+  "activeProjectCount": 1,
+  "totalForks": 0
+}
