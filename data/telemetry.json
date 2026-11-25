@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-25T09:31:47.764Z",
+  "generatedAt": "2026-11-25T16:48:13.847Z",
   "source": "graphql",
   "user": {
     "login": "SergioCamRoig18",
@@ -9,7 +9,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/u/128100992?s=64&u=70ec6fdffeae02651adfeeac75706d57af6ce9be&v=4"
   },
   "metrics": {
-    "commits12m": 262,
+    "commits12m": 266,
     "repositories": 4,
     "pullRequests": 8,
     "activeDaysPercent": 18,
@@ -20,31 +20,31 @@
   "languages": [
     {
       "name": "TypeScript",
-      "bytes": 279774,
+      "bytes": 284112,
       "percent": 38.6,
       "color": "#3178c6",
       "delta30d": 37.9
     },
     {
       "name": "CSS",
-      "bytes": 261877,
-      "percent": 36.1,
+      "bytes": 267586,
+      "percent": 36.4,
       "color": "#663399",
-      "delta30d": -0.6
+      "delta30d": -0.3
     },
     {
       "name": "JavaScript",
       "bytes": 176542,
-      "percent": 24.4,
+      "percent": 24,
       "color": "#f1e05a",
-      "delta30d": -37.8
+      "delta30d": -38.2
     },
     {
       "name": "HTML",
-      "bytes": 6723,
-      "percent": 0.9,
+      "bytes": 7466,
+      "percent": 1,
       "color": "#e34c26",
-      "delta30d": 0.5
+      "delta30d": 0.6
     }
   ],
   "weekly": [
@@ -60,7 +60,7 @@
     },
     {
       "dayIndex": 2,
-      "count": 28,
+      "count": 32,
       "isPeak": false
     },
     {
