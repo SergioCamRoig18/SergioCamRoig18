@@ -3,12 +3,12 @@
 <div align="center">
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=fd192cdf" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
+  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=26d4b207" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=a53a72dc" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
-  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=80dda408" width="396" alt="Ritmo Semanal" /></a>
+  <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=b27ea669" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
+  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=a90781e2" width="396" alt="Ritmo Semanal" /></a>
 </p>
 
 <p align="center">

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="210" viewBox="0 0 400 210" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">Lenguajes Más Usados</title>
-<desc id="desc">TypeScript 38.7%, CSS 35.9%, JavaScript 24.5%, HTML 0.9%</desc>
+<desc id="desc">TypeScript 38.6%, CSS 36.1%, JavaScript 24.4%, HTML 0.9%</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -57,28 +57,28 @@
 <g class="fade" style="animation-delay: 80ms">
         <rect x="18" y="42" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
         <text x="28" y="56" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">TYPESCRIPT</text>
-        <text x="326" y="56" text-anchor="end" class="meta" fill="#F5D042">▲ +38.0%</text>
-        <text x="372" y="56" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">38.7%</text>
+        <text x="326" y="56" text-anchor="end" class="meta" fill="#F5D042">▲ +37.9%</text>
+        <text x="372" y="56" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">38.6%</text>
         <text x="28" y="69" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="62" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="63" width="2" height="6" fill="#D8DEE6" class="grow"/><rect x="39" y="63" width="115" height="6" fill="#F5D042" class="grow"/>
+        <rect x="37" y="63" width="3" height="6" fill="#D8DEE6" class="grow"/><rect x="40" y="63" width="114" height="6" fill="#F5D042" class="grow"/>
         <text x="372" y="69" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 <g class="fade" style="animation-delay: 150ms">
         <rect x="18" y="81" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
         <text x="28" y="95" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">CSS</text>
-        <text x="326" y="95" text-anchor="end" class="meta" fill="#E05A47">▼ -0.8%</text>
-        <text x="372" y="95" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">35.9%</text>
+        <text x="326" y="95" text-anchor="end" class="meta" fill="#E05A47">▼ -0.6%</text>
+        <text x="372" y="95" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">36.1%</text>
         <text x="28" y="108" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="101" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-        <rect x="37" y="102" width="108" height="6" fill="#D8DEE6" class="grow"/><rect x="145" y="102" width="4" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>
+        <rect x="37" y="102" width="109" height="6" fill="#D8DEE6" class="grow"/><rect x="146" y="102" width="4" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>
         <text x="372" y="108" text-anchor="end" font-size="10" fill="#9AA4B2">100</text>
       </g>
 <g class="fade" style="animation-delay: 220ms">
         <rect x="18" y="120" width="364" height="34" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
         <text x="28" y="134" font-size="12" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">JAVASCRIPT</text>
-        <text x="326" y="134" text-anchor="end" class="meta" fill="#E05A47">▼ -37.7%</text>
-        <text x="372" y="134" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">24.5%</text>
+        <text x="326" y="134" text-anchor="end" class="meta" fill="#E05A47">▼ -37.8%</text>
+        <text x="372" y="134" text-anchor="end" font-size="12" font-weight="700" fill="#FFFFFF">24.4%</text>
         <text x="28" y="147" font-size="10" fill="#9AA4B2">0</text>
         <rect x="36" y="140" width="304" height="8" fill="rgba(0, 0, 0, 0.42)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
         <rect x="37" y="141" width="74" height="6" fill="#D8DEE6" class="grow"/><rect x="111" y="141" width="114" height="6" fill="url(#coral-hatch)" stroke="#E05A47" stroke-width="0.8"/>

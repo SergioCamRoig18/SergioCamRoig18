@@ -3,12 +3,12 @@
 <div align="center">
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=f3d23eab" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
+  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=9870f6bd" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
 </p>
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=e465dfab" width="396" alt="Most Used Languages (30D Delta)" /></a>
-  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=d29ffb47" width="396" alt="Weekly Activity Rhythm" /></a>
+  <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=fb6c2218" width="396" alt="Most Used Languages (30D Delta)" /></a>
+  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=ab16a906" width="396" alt="Weekly Activity Rhythm" /></a>
 </p>
 
 <p align="center">
