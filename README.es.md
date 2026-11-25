@@ -23,7 +23,6 @@ Desarrollo aplicaciones web full-stack, backends por capas y herramientas automa
 | :--- | :--- | :--- | :--- |
 | **Zubopedia-Web** | Enciclopedia 3D en WebGL con 55 modelos interactivos, 5 mapas Leaflet, minijuego diario Zubodle y SEO en Cloudflare Edge en 4 idiomas. | `React` `TypeScript` `Three.js` `Leaflet` `Cloudflare` | [Demo en vivo](https://zubopedia.pages.dev/?lang=es) · [Repo](https://github.com/SergioCamRoig18/Zubopedia-Web) |
 | **Votify** | Plataforma full-stack de eventos, votaciones y encuestas desarrollada en un equipo de 4 en la UPV (185 commits en dashboards, certificados PDF, roadmap IA y tests xUnit). | `.NET 9` `C#` `Blazor` `PostgreSQL` `xUnit` | [Caso de estudio](https://sergiocamroig18.github.io/#projects) *(Repo privado)* |
-| **Portfolio Web HUD** | Portfolio interactivo bilingüe inspirado en CoD: AW, sincronizado a diario con telemetría real desde GitHub Actions. | `React 19` `TypeScript` `Vite` `GitHub Pages` | [Web en vivo](https://sergiocamroig18.github.io) · [Repo](https://github.com/SergioCamRoig18/SergioCamRoig18.github.io) |
 | **GitHub HUD Engine** | Pipeline en TypeScript sin dependencias sobre GraphQL/REST que genera tarjetas SVG deterministas y JSON público con cache-busting SHA-256. | `TypeScript` `Node.js` `GraphQL` `GitHub Actions` | [Repo](https://github.com/SergioCamRoig18/SergioCamRoig18) |
 
 <div align="center">
