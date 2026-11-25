@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230" fill="none" role="img" aria-labelledby="title desc">
 <title id="title">SergioCamRoig18 — Perfil General</title>
-<desc id="desc">Grado en Ing. Informática · 4º Curso · 260 commits</desc>
+<desc id="desc">Ing. Informática · UPV (4º Curso) · 262 commits</desc>
 <defs>
   <linearGradient id="aw-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#15181D"/>
@@ -57,7 +57,7 @@
 <g class="fade" style="animation-delay: 60ms">
       <rect x="20" y="42" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="30" y="56" class="lbl" fill="#9AA4B2">FORMACIÓN</text>
-      <text x="30" y="72" class="val" fill="#EEF1F5">Grado en Ing. Informática · 4º Curso</text>
+      <text x="30" y="72" class="val" fill="#EEF1F5">Ing. Informática · UPV (4º Curso)</text>
     </g>
 <g class="fade" style="animation-delay: 120ms">
       <rect x="20" y="85" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
@@ -67,7 +67,7 @@
 <g class="fade" style="animation-delay: 180ms">
       <rect x="20" y="128" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="30" y="142" class="lbl" fill="#9AA4B2">UBICACIÓN E IDIOMAS</text>
-      <text x="30" y="158" class="val" fill="#EEF1F5">España · Español (Nativo) / Inglés</text>
+      <text x="30" y="158" class="val" fill="#EEF1F5">Valencia · ES (Nativo) / EN (C1)</text>
     </g>
 <g class="fade" style="animation-delay: 240ms">
       <rect x="20" y="171" width="302" height="38" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
@@ -79,14 +79,14 @@
     <rect x="350" y="29" width="36" height="36" fill="rgba(255,255,255,0.92)"/>
     <text x="368" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#14171C">SCR</text>
     <text x="398" y="44" font-size="17" font-weight="600" letter-spacing="0.04em" fill="#FFFFFF">SergioCamRoig18</text>
-    <text x="398" y="61" font-size="11.5" fill="#C7D0DB">Ingeniería del Software · 4º Curso</text>
+    <text x="398" y="61" font-size="11.5" fill="#C7D0DB">Ing. del Software · UPV (4º Curso)</text>
     <text x="766" y="40" text-anchor="end" class="lbl" fill="#9AA4B2">MIEMBRO DESDE</text>
     <text x="766" y="59" text-anchor="end" font-size="15" font-weight="700" fill="#F5D042">2023</text>
   </g>
 <g class="fade" style="animation-delay: 140ms">
       <rect x="338" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>
       <text x="349" y="104" class="lbl" fill="#9AA4B2">COMMITS (12M)</text>
-      <text x="349" y="132" class="stat-num">260</text>
+      <text x="349" y="132" class="stat-num">262</text>
     </g>
 <g class="fade" style="animation-delay: 190ms">
       <rect x="488" y="86" width="142" height="59" fill="rgba(46, 52, 60, 0.76)" stroke="rgba(255, 255, 255, 0.20)" stroke-width="1"/>

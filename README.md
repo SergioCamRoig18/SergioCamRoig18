@@ -12,7 +12,7 @@ Building full-stack web apps, layered backends, and automated tooling with **Typ
 [Web Portfolio](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig-343550318/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=9870f6bd" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
+  <a href="#hud-top"><img src="assets/en/01-profile.svg?v=819e40fd" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
 </p>
 
 </div>
@@ -30,7 +30,7 @@ Building full-stack web apps, layered backends, and automated tooling with **Typ
 
 <p align="center">
   <a href="#hud-top"><img src="assets/en/02a-languages.svg?v=fb6c2218" width="396" alt="Most Used Languages (30D Delta)" /></a>
-  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=ab16a906" width="396" alt="Weekly Activity Rhythm" /></a>
+  <a href="#hud-top"><img src="assets/en/02b-weekly.svg?v=51dd3490" width="396" alt="Weekly Activity Rhythm" /></a>
 </p>
 
 <p align="center">

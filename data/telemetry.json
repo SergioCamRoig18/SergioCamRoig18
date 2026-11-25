@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-25T08:15:37.859Z",
+  "generatedAt": "2026-11-25T09:31:47.764Z",
   "source": "graphql",
   "user": {
     "login": "SergioCamRoig18",
@@ -9,7 +9,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/u/128100992?s=64&u=70ec6fdffeae02651adfeeac75706d57af6ce9be&v=4"
   },
   "metrics": {
-    "commits12m": 260,
+    "commits12m": 262,
     "repositories": 4,
     "pullRequests": 8,
     "activeDaysPercent": 18,
@@ -60,7 +60,7 @@
     },
     {
       "dayIndex": 2,
-      "count": 26,
+      "count": 28,
       "isPeak": false
     },
     {
