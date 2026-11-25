@@ -2,9 +2,31 @@
 
 <div align="center">
 
+[English](README.md) · **Español**
+
+### Hola, soy Sergio Camacho Roig
+
+Estudiante de 4º de **Ingeniería Informática** en la **Universitat Politècnica de València (UPV)**, rama de **Ingeniería del Software**.  
+Desarrollo aplicaciones web full-stack, backends por capas y herramientas automatizadas con **TypeScript, React, C# (.NET 9) y PostgreSQL** · **Inglés C1** · Abierto a prácticas y roles junior.
+
+[Portfolio Web](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig-343550318/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
+
 <p align="center">
   <a href="#hud-top"><img src="assets/es/01-profile.svg?v=26d4b207" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
 </p>
+
+</div>
+
+### Proyectos Destacados
+
+| Proyecto | Resumen | Stack | Enlaces |
+| :--- | :--- | :--- | :--- |
+| **Zubopedia-Web** | Enciclopedia 3D en WebGL con 55 modelos interactivos, 5 mapas Leaflet, minijuego diario Zubodle y SEO en Cloudflare Edge en 4 idiomas. | `React` `TypeScript` `Three.js` `Leaflet` `Cloudflare` | [Demo en vivo](https://zubopedia.pages.dev/?lang=es) · [Repo](https://github.com/SergioCamRoig18/Zubopedia-Web) |
+| **Votify** | Plataforma full-stack de eventos, votaciones y encuestas desarrollada en un equipo de 4 en la UPV (185 commits en dashboards, certificados PDF, roadmap IA y tests xUnit). | `.NET 9` `C#` `Blazor` `PostgreSQL` `xUnit` | [Caso de estudio](https://sergiocamroig18.github.io/#projects) *(Repo privado)* |
+| **Portfolio Web HUD** | Portfolio interactivo bilingüe inspirado en CoD: AW, sincronizado a diario con telemetría real desde GitHub Actions. | `React 19` `TypeScript` `Vite` `GitHub Pages` | [Web en vivo](https://sergiocamroig18.github.io) · [Repo](https://github.com/SergioCamRoig18/SergioCamRoig18.github.io) |
+| **GitHub HUD Engine** | Pipeline en TypeScript sin dependencias sobre GraphQL/REST que genera tarjetas SVG deterministas y JSON público con cache-busting SHA-256. | `TypeScript` `Node.js` `GraphQL` `GitHub Actions` | [Repo](https://github.com/SergioCamRoig18/SergioCamRoig18) |
+
+<div align="center">
 
 <p align="center">
   <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=b27ea669" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
@@ -13,10 +35,6 @@
 
 <p align="center">
   <a href="#hud-top"><img src="assets/es/03-stack.svg?v=b7c951f1" width="800" alt="Stack Tecnológico" /></a>
-</p>
-
-<p align="center">
-  <a href="#hud-top"><img src="assets/es/04-projects.svg?v=9eb13fe0" width="800" alt="Proyectos Destacados" /></a>
 </p>
 
 <p align="center">

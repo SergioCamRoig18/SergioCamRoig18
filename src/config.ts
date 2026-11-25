@@ -6,8 +6,8 @@ export const HUD_CONFIG: HudConfig = {
   shortTag: 'SCR',
   memberSinceFallback: 2023,
   subtitle: {
-    en: 'Software Engineering · 4th Year Student',
-    es: 'Ingeniería del Software · 4º Curso',
+    en: 'Software Engineering · UPV (4th Year)',
+    es: 'Ing. del Software · UPV (4º Curso)',
   },
   links: {
     portfolio: 'https://sergiocamroig18.github.io',
@@ -18,8 +18,8 @@ export const HUD_CONFIG: HudConfig = {
     {
       label: { en: 'Education', es: 'Formación' },
       value: {
-        en: 'B.Sc. Computer Engineering · 4th Year',
-        es: 'Grado en Ing. Informática · 4º Curso',
+        en: 'B.Sc. Computer Eng. · UPV (4th Year)',
+        es: 'Ing. Informática · UPV (4º Curso)',
       },
     },
     {
@@ -32,8 +32,8 @@ export const HUD_CONFIG: HudConfig = {
     {
       label: { en: 'Location & Languages', es: 'Ubicación e Idiomas' },
       value: {
-        en: 'Spain · Spanish (Native) / English',
-        es: 'España · Español (Nativo) / Inglés',
+        en: 'Valencia · ES (Native) / EN (C1)',
+        es: 'Valencia · ES (Nativo) / EN (C1)',
       },
     },
     {
