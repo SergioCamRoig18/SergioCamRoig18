@@ -9,7 +9,7 @@
 Estudiante de 4º de **Ingeniería Informática** en la **Universitat Politècnica de València (UPV)**, rama de **Ingeniería del Software**.  
 Desarrollo aplicaciones web full-stack, backends por capas y herramientas automatizadas con **TypeScript, React, C# (.NET 9) y PostgreSQL** · **Inglés C1** · Abierto a prácticas y roles junior.
 
-[Portfolio Web](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig-343550318/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
+[Portfolio Web](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
 
 <p align="center">
   <a href="#hud-top"><img src="assets/es/01-profile.svg?v=3cd5bea0" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
@@ -38,7 +38,7 @@ Desarrollo aplicaciones web full-stack, backends por capas y herramientas automa
 
 <p align="center">
   <a href="https://sergiocamroig18.github.io"><img src="assets/buttons/btn-portfolio-es.svg?v=aae0e463" alt="Portfolio Web" /></a>
-  <a href="https://www.linkedin.com/in/sergio-camacho-roig-343550318/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/sergio-camacho-roig/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
 </p>
 
 </div>

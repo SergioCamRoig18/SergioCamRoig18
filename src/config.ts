@@ -11,7 +11,7 @@ export const HUD_CONFIG: HudConfig = {
   },
   links: {
     portfolio: 'https://sergiocamroig18.github.io',
-    linkedin: 'https://www.linkedin.com/in/sergio-camacho-roig-343550318/',
+    linkedin: 'https://www.linkedin.com/in/sergio-camacho-roig/',
     github: 'https://github.com/SergioCamRoig18',
   },
   profileCards: [

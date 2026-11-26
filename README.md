@@ -10,7 +10,7 @@
 Building full-stack web apps, layered backends, and automated tooling with **TypeScript, React, C# (.NET 9), and PostgreSQL**.<br>
 **English C1** · Open to internships & junior SWE roles.
 
-[Web Portfolio](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig-343550318/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
+[Web Portfolio](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
 
 <p align="center">
   <a href="#hud-top"><img src="assets/en/01-profile.svg?v=1431ad4f" width="800" alt="SergioCamRoig18 — Profile Overview" /></a>
@@ -39,7 +39,7 @@ Building full-stack web apps, layered backends, and automated tooling with **Typ
 
 <p align="center">
   <a href="https://sergiocamroig18.github.io"><img src="assets/buttons/btn-portfolio-en.svg?v=aae0e463" alt="Web Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/sergio-camacho-roig-343550318/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/sergio-camacho-roig/"><img src="assets/buttons/btn-linkedin.svg?v=17918dd8" alt="LinkedIn" /></a>
 </p>
 
 </div>
