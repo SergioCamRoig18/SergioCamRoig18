@@ -12,7 +12,7 @@ Desarrollo aplicaciones web full-stack, backends por capas y herramientas automa
 [Portfolio Web](https://sergiocamroig18.github.io) · [LinkedIn](https://www.linkedin.com/in/sergio-camacho-roig/) · [sergiocamroig18@gmail.com](mailto:sergiocamroig18@gmail.com)
 
 <p align="center">
-  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=3cd5bea0" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
+  <a href="#hud-top"><img src="assets/es/01-profile.svg?v=e8adff40" width="800" alt="SergioCamRoig18 — Perfil General" /></a>
 </p>
 
 </div>
@@ -29,7 +29,7 @@ Desarrollo aplicaciones web full-stack, backends por capas y herramientas automa
 
 <p align="center">
   <a href="#hud-top"><img src="assets/es/02a-languages.svg?v=ca500ccc" width="396" alt="Lenguajes Más Usados (Variación 30D)" /></a>
-  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=1c5d5475" width="396" alt="Ritmo Semanal" /></a>
+  <a href="#hud-top"><img src="assets/es/02b-weekly.svg?v=fc24818e" width="396" alt="Ritmo Semanal" /></a>
 </p>
 
 <p align="center">

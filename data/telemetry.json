@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-26T09:54:58.388Z",
+  "generatedAt": "2026-11-27T16:09:52.978Z",
   "source": "graphql",
   "user": {
     "login": "SergioCamRoig18",
@@ -9,7 +9,7 @@
     "avatarUrl": "https://avatars.githubusercontent.com/u/128100992?s=64&u=70ec6fdffeae02651adfeeac75706d57af6ce9be&v=4"
   },
   "metrics": {
-    "commits12m": 269,
+    "commits12m": 271,
     "repositories": 5,
     "pullRequests": 8,
     "activeDaysPercent": 18,
@@ -27,7 +27,7 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 285765,
+      "bytes": 285745,
       "percent": 26.9,
       "color": "#3178c6",
       "delta30d": 26.2
@@ -41,7 +41,7 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 228949,
+      "bytes": 228939,
       "percent": 21.6,
       "color": "#f1e05a",
       "delta30d": -40.6
@@ -70,7 +70,7 @@
     },
     {
       "dayIndex": 4,
-      "count": 36,
+      "count": 38,
       "isPeak": false
     },
     {
